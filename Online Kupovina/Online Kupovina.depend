@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1587844064 source:c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\dinstring.cpp
+	"dinstring.hpp"
+
+1587844064 c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\dinstring.hpp
+	<iostream>
+
+1587922002 source:c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\main.cpp
+	<iostream>
+	"dinstring.hpp"
+
