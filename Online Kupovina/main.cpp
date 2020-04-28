@@ -1,5 +1,6 @@
 #include <iostream>
 #include "dinstring.hpp"
+#include "lista.hpp"
 
 using namespace std;
 
@@ -19,47 +20,17 @@ protected:
     ZEMLJA zemljaPorekla;
     DinString ID;
 public:
-    void setOpis(DinString o)
-    {
-        opis = o;
-    }
-    void setCena(double c)
-    {
-        cena = c;
-    }
-    void setBoja(BOJA b)
-    {
-        boja = b;
-    }
-    void setModel(MODEL m)
-    {
-        model = m;
-    }
-    void setMaterijal(MATERIJAL mat)
-    {
-        materijal = mat;
-    }
-    void setProizvodjac(DinString p)
-    {
-        proizvodjac = p;
-    }
-    void setZemlja(ZEMLJA z)
-    {
-        zemljaPorekla = z;
-    }
-    void setID(DinString i)
-    {
-        ID = i;
-    }
+    void setOpis(DinString o){opis = o;}
+    void setCena(double c){cena = c;}
+    void setBoja(BOJA b){boja = b;}
+    void setModel(MODEL m){model = m;}
+    void setMaterijal(MATERIJAL mat){materijal = mat;}
+    void setProizvodjac(DinString p){proizvodjac = p;}
+    void setZemlja(ZEMLJA z){zemljaPorekla = z;}
+    void setID(DinString i){ID = i;}
 
-    DinString getOpis()const
-    {
-        return opis;
-    }
-    double getCena()const
-    {
-        return cena;
-    }
+    DinString getOpis()const{return opis;}
+    double getCena()const{return cena;}
     string getBoja()const
     {
         switch(boja)
@@ -124,10 +95,7 @@ public:
         }
     }
     virtual string getMaterijal()const = 0;
-    DinString getProizvodjac()const
-    {
-        return proizvodjac;
-    }
+    DinString getProizvodjac()const{return proizvodjac;}
     string getDrzava()const
     {
         switch(zemljaPorekla)
@@ -145,7 +113,7 @@ public:
             return "KINA";
             break;
         case BANGLADES:
-            return "INDIJA";
+            return "BANGLADES";
             break;
         case FRANCUSKA:
             return "FRANCUSKA";
@@ -161,17 +129,15 @@ public:
             break;
         }
     }
-    DinString getID()const
-    {
-        return ID;
-    }
+    DinString getID()const{return ID;}
 
     void ispisi()
     {
         cout<<"Kratak opis proizvoda: ";
         cout<<getOpis()<<endl;
         cout<<"Cena proizvoda: ";
-        cout<<getCena()<<endl;
+        cout<<getCena();
+        cout<<" dinara"<<endl;
         cout<<"Boja proizvoda: ";
         cout<<getBoja()<<endl;
         cout<<"Model: ";
@@ -184,7 +150,6 @@ public:
         cout<<getDrzava()<<endl;
         cout<<"ID proizvoda: ";
         cout<<getID()<<endl;
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
     }
 };
 enum velicinaOdece {XS,S,M,L,XL,XXL,XXXL,XXXXL};
@@ -201,26 +166,11 @@ private:
     velicinaOdece velicina;
     SEZONA sezona;
 public:
-    void setOdeljenje(POL p)
-    {
-        odeljenje = p;
-    }
-    void setNaziv(vrstaGornjegDela n)
-    {
-        naziv = n;
-    }
-    void setTip(tipRukava t)
-    {
-        tip = t;
-    }
-    void setVelicina(velicinaOdece v)
-    {
-        velicina = v;
-    }
-    void setSezona(SEZONA s)
-    {
-        sezona = s;
-    }
+    void setOdeljenje(POL p){odeljenje = p;}
+    void setNaziv(vrstaGornjegDela n){naziv = n;}
+    void setTip(tipRukava t){tip = t;}
+    void setVelicina(velicinaOdece v){velicina = v;}
+    void setSezona(SEZONA s){sezona = s;}
 
     string getOdeljenje()const
     {
@@ -402,7 +352,6 @@ public:
             break;
         }
     }
-
     GornjiDelovi()
     {
         odeljenje = ZENSKI;
@@ -465,25 +414,18 @@ public:
 enum vrstaDonjegDela {FARMERICE,TRENERKE,SORC,SUKNJA,HELANKE,PANTALONE};
 class DonjiDelovi : public Proizvod
 {
-private:
+protected:
     POL odeljenje;
     vrstaDonjegDela naziv;
     int velicina;
 public:
-    void setOdeljenje(POL p)
-    {
-        odeljenje = p;
-    }
-    void setNaziv(vrstaDonjegDela n)
-    {
-        naziv = n;
-    }
+    void setOdeljenje(POL p){odeljenje = p;}
+    void setNaziv(vrstaDonjegDela n){naziv = n;}
     void setVelicina(int v)
     {
         if(v >= 18 && v <= 40)
             velicina = v;
     }
-
     string getMaterijal()const
     {
         switch(materijal)
@@ -580,7 +522,6 @@ public:
         else
             return 0;
     }
-
     DonjiDelovi()
     {
         odeljenje = ZENSKI;
@@ -645,14 +586,8 @@ private:
     nacinZatvaranja kopca;
     double debljinaDjona;
 public:
-    void setOdeljenje(POL p)
-    {
-        odeljenje = p;
-    }
-    void setNaziv(vrstaObuce v)
-    {
-        naziv = v;
-    }
+    void setOdeljenje(POL p){odeljenje = p;}
+    void setNaziv(vrstaObuce v){naziv = v;}
     void setVelicina(int v)
     {
         if(odeljenje == MUSKI)
@@ -671,14 +606,8 @@ public:
                 velicina = v;
         }
     }
-    void setZatvaranje(nacinZatvaranja n)
-    {
-        kopca = n;
-    }
-    void setDebljina(double d)
-    {
-        debljinaDjona = d;
-    }
+    void setZatvaranje(nacinZatvaranja n){kopca = n;}
+    void setDebljina(double d){debljinaDjona = d;}
 
     string getMaterijal()const
     {
@@ -812,10 +741,7 @@ public:
             break;
         }
     }
-    double getDebljina()const
-    {
-        return debljinaDjona;
-    }
+    double getDebljina()const{return debljinaDjona;}
 
     Obucica()
     {
@@ -890,18 +816,9 @@ private:
     double duzina;
     double visina;
 public:
-    void setOdeljenje(POL p)
-    {
-        odeljenje = p;
-    }
-    void setPeriod(SEZONA s)
-    {
-        period = s;
-    }
-    void setNaziv(aks n)
-    {
-        naziv = n;
-    }
+    void setOdeljenje(POL p){odeljenje = p;}
+    void setPeriod(SEZONA s){period = s;}
+    void setNaziv(aks n){naziv = n;}
     void setSirina(double s)
     {
         if(s > 0)
@@ -981,7 +898,8 @@ public:
                 return "Nema materijala";
                 break;
             }
-        }
+        }else
+            return "Nema perioda";
     }
     string getOdeljenje()const
     {
@@ -1001,7 +919,6 @@ public:
             break;
         }
     }
-
     string getNaziv()const
     {
         if(period == LETO)
@@ -1057,20 +974,12 @@ public:
                 return "Nema proizvoda";
                 break;
             }
-        }
+        }else
+            return "Nema perioda";
     }
-    double getDuzinu()const
-    {
-        return duzina;
-    }
-    double getSirina()const
-    {
-        return sirina;
-    }
-    double getVisina()const
-    {
-        return visina;
-    }
+    double getDuzinu()const{return duzina;}
+    double getSirina()const{return sirina;}
+    double getVisina()const{return visina;}
 
     Aksesoaric()
     {
@@ -1127,95 +1036,162 @@ public:
     {
         cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         cout<<"Naziv proizvoda: ";
+        cout<<getNaziv()<<endl;
         cout<<"Kolekcija: ";
         cout<<getPeriod()<<endl;
-        cout<<getNaziv()<<endl;
         cout<<"Dimenzije proizvoda: ";
         cout<<getSirina()<<"x"<<getDuzinu()<<"x"<<getVisina()<<endl;
         Proizvod::ispisi();
     }
-
 };
-class Odeca
+class Odeljenje
 {
-
+public:
+    virtual bool dodajUGornje(const GornjiDelovi&) = 0;
+    virtual void ispisGornjih() = 0;
+    virtual bool dodajUDonje(const DonjiDelovi&) = 0;
+    virtual void ispisDonjih() = 0;
+    virtual bool dodajuObucicu(const Obucica&) = 0;
+    virtual void ispisObucice() = 0;
+    virtual bool dodajUAksesoaric(const Aksesoaric&) = 0;
+    virtual void ispisAksesoarica() = 0;
 };
-class Obuca
+class MuskoOdeljenje : public Odeljenje
 {
+private:
+    Lista<GornjiDelovi> gornji;
+    Lista<DonjiDelovi> donji;
+    Lista<Obucica> ob;
+    Lista<Aksesoaric> akss;
+public:
+        bool dodajUGornje(const GornjiDelovi &gg)
+        {
+            if(gg.getOdeljenje() == "MUSKO")
+            {
+                return gornji.dodajElement(gornji.velicina()+1,gg);
+            }
+            return false;
+        }
+        void ispisGornjih()
+    {
+        if(gornji.velicina() == 0)
+        {
+            cout<<"Nema muskih gornjih delova"<<endl;
+        } else
+        {
+            GornjiDelovi d;
+            cout<<"Muski gornji delovi :"<<endl;
 
-};
-class Aksesoar
-{
+            for (int i = 1; i <= gornji.velicina(); i++)
+            {
+                gornji.izlistaj(i, d);
+                d.ispis();
+            }
+        }
+    }
+     bool dodajUDonje(const DonjiDelovi &dd)
+        {
+            if(dd.getOdeljenje() == "MUSKO")
+            {
+                return donji.dodajElement(donji.velicina()+1,dd);
+            }
+            return false;
+        }
+        void ispisDonjih()
+    {
+        if(donji.velicina() == 0)
+        {
+            cout<<"Nema muskih donjih delova"<<endl;
+        } else
+        {
+            DonjiDelovi d;
+            cout<<"Muski donji delovi :"<<endl;
 
-};
-class MuskoOdeljenje
-{
-    ///lista odece cipela bla bla
-};
-class ZenskoOdeljenje
-{
+            for (int i = 1; i <= donji.velicina(); i++)
+            {
+                donji.izlistaj(i, d);
+                d.ispis();
+            }
+        }
+    }
+     bool dodajUObucicu(const Obucica &oo)
+        {
+            if(oo.getOdeljenje() == "MUSKO")
+            {
+                return ob.dodajElement(ob.velicina()+1,oo);
+            }
+            return false;
+        }
+        void ispisObucice()
+    {
+        if(ob.velicina() == 0)
+        {
+            cout<<"Nema muskih obuca"<<endl;
+        } else
+        {
+            Obucica c;
+            cout<<"Muska obuca :"<<endl;
 
-};
-class DecijeOdeljenje
-{
+            for (int i = 1; i <= ob.velicina(); i++)
+            {
+                ob.izlistaj(i, c);
+                c.ispis();
+            }
+        }
+    }
+     bool dodajUAksesoaric(const Aksesoaric &aa)
+        {
+            if(aa.getOdeljenje() == "MUSKO")
+            {
+                return akss.dodajElement(akss.velicina()+1,aa);
+            }
+            return false;
+        }
+        void ispisAksesoarica()
+    {
+        if(akss.velicina() == 0)
+        {
+            cout<<"Nema muskih aksesoara"<<endl;
+        } else
+        {
+            Aksesoaric a;
+            cout<<"Muski aksesoari :"<<endl;
 
+            for (int i = 1; i <= akss.velicina(); i++)
+            {
+                akss.izlistaj(i, a);
+                a.ispis();
+            }
+        }
+    }
 };
-class Katalog
-{
-
-};
+class ZenskoOdeljenje : public Odeljenje{};
+class DecijeOdeljenje: public Odeljenje{};
+class SvaOdeca{};
+class SvaObuca{};
+class SavAksesoar{};
+class Katalog{};
 class Osoba
 {
 /// izvesti prodavac i kupac prodavac moze da dodaje u prodavnicu
 
 };
-class Narudzbina
-{
-
-};
-class Prodavnica
-{
-
-};
+class Narudzbina{};
+class Prodavnica{};
 class Korpa
 {
-///proizvod p i kartica k i prodavnica p,osoba o
+///lista proizvoda dodaj obrisi p i kartica k i prodavnica p,osoba o
 ///metode kupi dodaj u korpu oduzmi iz korpe
 };
-class KonacniRacun
-{
-
-};
-class Lager
-{
-
-};
-class Kartica
-{
-
-};
-class Kupovina
-{
-
-};
-class Isporuka
-{
-
-};
-class Kupac : public Osoba
-{
-
-};
-class CallCentar
-{
-
-};
-class info
-{
-
-};
-
-
+class KonacniRacun{};
+class Lager{};
+class Kartica{};
+class Kupovina{};
+class Isporuka{};
+class Kupac : public Osoba{};
+class Radnik : public Osoba{};;
+class CallCentar{};
+class info{};
 int main()
 {
     GornjiDelovi G;
@@ -1224,5 +1200,7 @@ int main()
     D.ispis();
     Obucica Z;
     Z.ispis();
+    Aksesoaric A;
+    A.ispis();
     return 0;
 }

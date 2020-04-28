@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="dinstring.cpp" />
 		<Unit filename="dinstring.hpp" />
+		<Unit filename="lista.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
