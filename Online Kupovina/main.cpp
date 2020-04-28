@@ -1044,19 +1044,7 @@ public:
         Proizvod::ispisi();
     }
 };
-class Odeljenje
-{
-public:
-    virtual bool dodajUGornje(const GornjiDelovi&) = 0;
-    virtual void ispisGornjih() = 0;
-    virtual bool dodajUDonje(const DonjiDelovi&) = 0;
-    virtual void ispisDonjih() = 0;
-    virtual bool dodajuObucicu(const Obucica&) = 0;
-    virtual void ispisObucice() = 0;
-    virtual bool dodajUAksesoaric(const Aksesoaric&) = 0;
-    virtual void ispisAksesoarica() = 0;
-};
-class MuskoOdeljenje : public Odeljenje
+class MuskoOdeljenje
 {
 private:
     Lista<GornjiDelovi> gornji;
@@ -1165,11 +1153,299 @@ public:
         }
     }
 };
-class ZenskoOdeljenje : public Odeljenje{};
-class DecijeOdeljenje: public Odeljenje{};
-class SvaOdeca{};
-class SvaObuca{};
-class SavAksesoar{};
+class ZenskoOdeljenje
+{
+private:
+    Lista<GornjiDelovi> gornji;
+    Lista<DonjiDelovi> donji;
+    Lista<Obucica> ob;
+    Lista<Aksesoaric> akss;
+public:
+        bool dodajUGornje(const GornjiDelovi &gg)
+        {
+            if(gg.getOdeljenje() == "ZENSKO")
+            {
+                return gornji.dodajElement(gornji.velicina()+1,gg);
+            }
+            return false;
+        }
+        void ispisGornjih()
+    {
+        if(gornji.velicina() == 0)
+        {
+            cout<<"Nema zenskih gornjih delova"<<endl;
+        } else
+        {
+            GornjiDelovi d;
+            cout<<"Zenski gornji delovi :"<<endl;
+
+            for (int i = 1; i <= gornji.velicina(); i++)
+            {
+                gornji.izlistaj(i, d);
+                d.ispis();
+            }
+        }
+    }
+     bool dodajUDonje(const DonjiDelovi &dd)
+        {
+            if(dd.getOdeljenje() == "ZENSKO")
+            {
+                return donji.dodajElement(donji.velicina()+1,dd);
+            }
+            return false;
+        }
+        void ispisDonjih()
+    {
+        if(donji.velicina() == 0)
+        {
+            cout<<"Nema zenskih donjih delova"<<endl;
+        } else
+        {
+            DonjiDelovi d;
+            cout<<"Zenski donji delovi :"<<endl;
+
+            for (int i = 1; i <= donji.velicina(); i++)
+            {
+                donji.izlistaj(i, d);
+                d.ispis();
+            }
+        }
+    }
+     bool dodajUObucicu(const Obucica &oo)
+        {
+            if(oo.getOdeljenje() == "ZENSKO")
+            {
+                return ob.dodajElement(ob.velicina()+1,oo);
+            }
+            return false;
+        }
+        void ispisObucice()
+    {
+        if(ob.velicina() == 0)
+        {
+            cout<<"Nema zenskih obuca"<<endl;
+        } else
+        {
+            Obucica c;
+            cout<<"Zenska obuca :"<<endl;
+
+            for (int i = 1; i <= ob.velicina(); i++)
+            {
+                ob.izlistaj(i, c);
+                c.ispis();
+            }
+        }
+    }
+     bool dodajUAksesoaric(const Aksesoaric &aa)
+        {
+            if(aa.getOdeljenje() == "ZENSKO")
+            {
+                return akss.dodajElement(akss.velicina()+1,aa);
+            }
+            return false;
+        }
+        void ispisAksesoarica()
+    {
+        if(akss.velicina() == 0)
+        {
+            cout<<"Nema zenskih aksesoara"<<endl;
+        } else
+        {
+            Aksesoaric a;
+            cout<<"Zenski aksesoari :"<<endl;
+
+            for (int i = 1; i <= akss.velicina(); i++)
+            {
+                akss.izlistaj(i, a);
+                a.ispis();
+            }
+        }
+    }
+};
+class DecijeOdeljenje
+{
+private:
+    Lista<GornjiDelovi> gornji;
+    Lista<DonjiDelovi> donji;
+    Lista<Obucica> ob;
+    Lista<Aksesoaric> akss;
+public:
+        bool dodajUGornje(const GornjiDelovi &gg)
+        {
+            if(gg.getOdeljenje() == "DECIJE")
+            {
+                return gornji.dodajElement(gornji.velicina()+1,gg);
+            }
+            return false;
+        }
+        void ispisGornjih()
+    {
+        if(gornji.velicina() == 0)
+        {
+            cout<<"Nema decijih gornjih delova"<<endl;
+        } else
+        {
+            GornjiDelovi d;
+            cout<<"Deciji gornji delovi :"<<endl;
+
+            for (int i = 1; i <= gornji.velicina(); i++)
+            {
+                gornji.izlistaj(i, d);
+                d.ispis();
+            }
+        }
+    }
+     bool dodajUDonje(const DonjiDelovi &dd)
+        {
+            if(dd.getOdeljenje() == "DECIJE")
+            {
+                return donji.dodajElement(donji.velicina()+1,dd);
+            }
+            return false;
+        }
+        void ispisDonjih()
+    {
+        if(donji.velicina() == 0)
+        {
+            cout<<"Nema decijih donjih delova"<<endl;
+        } else
+        {
+            DonjiDelovi d;
+            cout<<"Deciji donji delovi :"<<endl;
+
+            for (int i = 1; i <= donji.velicina(); i++)
+            {
+                donji.izlistaj(i, d);
+                d.ispis();
+            }
+        }
+    }
+     bool dodajUObucicu(const Obucica &oo)
+        {
+            if(oo.getOdeljenje() == "DECIJE")
+            {
+                return ob.dodajElement(ob.velicina()+1,oo);
+            }
+            return false;
+        }
+        void ispisObucice()
+    {
+        if(ob.velicina() == 0)
+        {
+            cout<<"Nema decije obuce"<<endl;
+        } else
+        {
+            Obucica c;
+            cout<<"Decija obuca :"<<endl;
+
+            for (int i = 1; i <= ob.velicina(); i++)
+            {
+                ob.izlistaj(i, c);
+                c.ispis();
+            }
+        }
+    }
+     bool dodajUAksesoaric(const Aksesoaric &aa)
+        {
+            if(aa.getOdeljenje() == "DECIJE")
+            {
+                return akss.dodajElement(akss.velicina()+1,aa);
+            }
+            return false;
+        }
+        void ispisAksesoarica()
+    {
+        if(akss.velicina() == 0)
+        {
+            cout<<"Nema decijeg aksesoara"<<endl;
+        } else
+        {
+            Aksesoaric a;
+            cout<<"Deciji aksesoari :"<<endl;
+
+            for (int i = 1; i <= akss.velicina(); i++)
+            {
+                akss.izlistaj(i, a);
+                a.ispis();
+            }
+        }
+    }
+};
+enum vrsta {GORNJI,DONJI};
+enum deo {ODECA,OBUCA,AKSESOAR};
+class SvaOdeca
+{
+private:
+    MuskoOdeljenje M;
+    ZenskoOdeljenje Z;
+    DecijeOdeljenje D;
+public:
+    void ispisiSvuOdecu(POL p,vrsta v)
+    {
+        if(p == MUSKI)
+        {
+            if(v == GORNJI)
+            {
+                M.ispisGornjih();
+            }else if(v == DONJI)
+                M.ispisDonjih();
+        }else if(p == ZENSKI)
+        {
+            if(v == GORNJI)
+            {
+                Z.ispisGornjih();
+            }else if(v == DONJI)
+                Z.ispisDonjih();
+        }else if(p == DECIJI)
+        {
+            if(v == GORNJI)
+            {
+                D.ispisGornjih();
+            }else if(v == DONJI)
+                D.ispisDonjih();
+        }
+    }
+};
+class SvaObuca
+{
+private:
+    MuskoOdeljenje M;
+    ZenskoOdeljenje Z;
+    DecijeOdeljenje D;
+public:
+    void ispisiSvuObucu(POL p)
+    {
+        if(p == MUSKI)
+        {
+            M.ispisObucice();
+        }else if(p == ZENSKI)
+        {
+            Z.ispisObucice();
+        }else
+            D.ispisObucice();
+    }
+};
+class SavAksesoar
+{
+private:
+    MuskoOdeljenje M;
+    ZenskoOdeljenje Z;
+    DecijeOdeljenje D;
+public:
+    void ispisiSavAksesoar(POL p)
+    {
+        if(p == MUSKI)
+        {
+            M.ispisAksesoarica();
+        }else if(p == ZENSKI)
+        {
+            Z.ispisAksesoarica();
+        }else if(p == DECIJI)
+        {
+             D.ispisAksesoarica();
+        }
+    }
+};
 class Katalog{};
 class Osoba
 {
@@ -1177,24 +1453,106 @@ class Osoba
 
 };
 class Narudzbina{};
-class Prodavnica{};
 class Korpa
 {
 ///lista proizvoda dodaj obrisi p i kartica k i prodavnica p,osoba o
 ///metode kupi dodaj u korpu oduzmi iz korpe
 };
-class KonacniRacun{};
 class Lager{};
 class Kartica{};
 class Kupovina{};
 class Isporuka{};
 class Kupac : public Osoba{};
-class Radnik : public Osoba{};;
-class CallCentar{};
+class Radnik : public Osoba{};
+class Mesto{/*lista mesta prodavnica*/};
 class info{};
+class Prodavnica
+{
+private:
+    deo d;
+    POL pol;
+    vrsta vrs;
+    SvaOdeca S;
+    SvaObuca O;
+    SavAksesoar A;
+public:
+    void setDeo(deo dd){d = dd;}
+    void setPol(POL pp){pol = pp;}
+    void setVrsta(vrsta v){vrs = v;}
+
+    string getDeo()const
+    {
+        switch(d)
+        {
+        case ODECA:
+            return "ODECA";
+            break;
+        case OBUCA:
+            return "OBUCA";
+            break;
+        case AKSESOAR:
+            return "AKSESOAR";
+            break;
+        default:
+            return "Nema te oblasti";
+            break;
+        }
+    }
+    string getPol()const
+    {
+        switch(pol)
+        {
+        case MUSKI:
+            return "MUSKI";
+            break;
+        case ZENSKI:
+            return "ZENSKI";
+            break;
+        case DECIJI:
+            return "DECIJI";
+            break;
+        default:
+            return "Nema pola";
+            break;
+        }
+    }
+    string getVrsta()const
+    {
+        switch(vrs)
+        {
+        case GORNJI:
+            return "Gornji delovi";
+            break;
+        case DONJI:
+            return "Donji delovi";
+            break;
+        default:
+            return "Nema vrste";
+            break;
+        }
+    }
+    Prodavnica(){d = ODECA; pol = MUSKI; vrs = GORNJI;}
+    Prodavnica(deo dd,POL p,vrsta v){d = dd; pol = p; vrs = v;}
+    Prodavnica(const Prodavnica &pro){d = pro.d; pol = pro.pol; vrs = pro.vrs;}
+
+    void ispisiZeljeniDeoProdavnice(deo d,POL pol,vrsta vrs)
+    {
+        if(d == ODECA)
+        {
+            S.ispisiSvuOdecu(pol,vrs);
+        }else if(d == OBUCA)
+        {
+            O.ispisiSvuObucu(pol);
+        }else if(d == AKSESOAR)
+        {
+            A.ispisiSavAksesoar(pol);
+        }
+    }
+};
 int main()
 {
     GornjiDelovi G;
+    GornjiDelovi G2(G);
     G.ispis();
     DonjiDelovi D;
     D.ispis();
@@ -1202,5 +1560,11 @@ int main()
     Z.ispis();
     Aksesoaric A;
     A.ispis();
+    ZenskoOdeljenje O;
+    O.dodajUGornje(G2);
+    O.ispisGornjih();
+    ZenskoOdeljenje LJ;
+    LJ.dodajUDonje(D);
+    LJ.ispisDonjih();
     return 0;
 }

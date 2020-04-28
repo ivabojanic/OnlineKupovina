@@ -5,7 +5,12 @@
 1587844064 c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\dinstring.hpp
 	<iostream>
 
-1588013985 source:c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\main.cpp
+1588106946 source:c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\main.cpp
 	<iostream>
 	"dinstring.hpp"
+	"lista.hpp"
+
+1588082937 c:\users\bojan\desktop\gjjz\codeblocks\online kupovina\lista.hpp
+	<stdlib.h>
+	<iostream>
 
