@@ -8,6 +8,7 @@ enum BOJA {BELA,CRNA,CRVENA,ZELENA,PLAVA,ZUTA,NARANDZASTA,LJUBICASTA,ROZE,SIVA,B
 enum MODEL {NOVI,LASTSEASON};
 enum MATERIJAL {VUNA,PAMUK,POLIESTER,TEKSAS,SVILA,VISKOZA,KASMIR,KREP,SOMOT,PLASTIKA,GUMA,PLATNO,KOZA};///dodaj za aksesoar
 enum ZEMLJA {SRBIJA,INDONEZIJA,TURSKA,KINA,BANGLADES,FRANCUSKA,ITALIJA,TAJLAND};
+enum akcija {GLEDANJE,UBACIUKORPU};
 class Proizvod
 {
 protected:
@@ -19,6 +20,9 @@ protected:
     DinString proizvodjac;
     ZEMLJA zemljaPorekla;
     DinString ID;
+
+    akcija ak = GLEDANJE;
+    bool naLageru;
 public:
     void setOpis(DinString o){opis = o;}
     void setCena(double c){cena = c;}
@@ -28,6 +32,8 @@ public:
     void setProizvodjac(DinString p){proizvodjac = p;}
     void setZemlja(ZEMLJA z){zemljaPorekla = z;}
     void setID(DinString i){ID = i;}
+    void setAkcija(akcija a){ak = a;}
+    void setLager(bool l){naLageru = l;}
 
     DinString getOpis()const{return opis;}
     double getCena()const{return cena;}
@@ -130,7 +136,29 @@ public:
         }
     }
     DinString getID()const{return ID;}
-
+    string getAkcija()const
+    {
+        switch(ak)
+        {
+        case GLEDANJE:
+            return "GLEDANJE";
+            break;
+        case UBACIUKORPU:
+            return "U KORPI";
+            break;
+        default:
+            return "Nema te akcije";
+            break;
+        }
+    }
+    string getLager()const
+    {
+        if(naLageru == true)
+        {
+            return  "Ima na lageru";
+        }else
+            return "Nema na lageru";
+    }
     void ispisi()
     {
         cout<<"Kratak opis proizvoda: ";
@@ -150,6 +178,33 @@ public:
         cout<<getDrzava()<<endl;
         cout<<"ID proizvoda: ";
         cout<<getID()<<endl;
+        cout<<"Lager: ";
+        cout<<getLager()<<endl;
+    }
+
+    bool dodajUKorpu()
+    {
+        if(ak != UBACIUKORPU)
+        {
+            ak = UBACIUKORPU;
+            return true;
+        }else
+        {
+            cout<<"Proizvod je vec u korpi.";
+            return false;
+        }
+    }
+    bool izbaciIzKorpe()
+    {
+        if(ak == UBACIUKORPU)
+        {
+            ak = GLEDANJE;
+            return true;
+        }else
+        {
+            cout<<"Proizvod vec nije u korpi.";
+            return false;
+        }
     }
 };
 enum velicinaOdece {XS,S,M,L,XL,XXL,XXXL,XXXXL};
@@ -367,8 +422,9 @@ public:
         proizvodjac = "FBsister";
         zemljaPorekla = INDONEZIJA;
         ID = "0811471005";
+        naLageru = true;
     }
-    GornjiDelovi(POL l,vrstaGornjegDela n,tipRukava t,velicinaOdece v,SEZONA s,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i)
+    GornjiDelovi(POL l,vrstaGornjegDela n,tipRukava t,velicinaOdece v,SEZONA s,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i,bool lag)
     {
         odeljenje = l;
         naziv = n;
@@ -383,6 +439,7 @@ public:
         proizvodjac = p;
         zemljaPorekla = z;
         ID = i;
+        naLageru = lag;
     }
     GornjiDelovi(const GornjiDelovi &g)
     {
@@ -399,6 +456,7 @@ public:
         proizvodjac = g.proizvodjac;
         zemljaPorekla = g.zemljaPorekla;
         ID = g.ID;
+        naLageru = g.naLageru;
     }
     void ispis()
     {
@@ -535,9 +593,10 @@ public:
         proizvodjac = "LCWaikiki";
         zemljaPorekla = BANGLADES;
         ID = "0572998001";
+        naLageru = false;
 
     }
-    DonjiDelovi(POL l,vrstaDonjegDela n,int v,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i)
+    DonjiDelovi(POL l,vrstaDonjegDela n,int v,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i,bool lag)
     {
         odeljenje = l;
         naziv = n;
@@ -550,6 +609,7 @@ public:
         proizvodjac = p;
         zemljaPorekla = z;
         ID = i;
+        naLageru = lag;
     }
     DonjiDelovi(const DonjiDelovi &d)
     {
@@ -564,6 +624,7 @@ public:
         proizvodjac = d.proizvodjac;
         zemljaPorekla = d.zemljaPorekla;
         ID = d.ID;
+        naLageru = d.naLageru;
     }
     void ispis()
     {
@@ -758,8 +819,9 @@ public:
         proizvodjac = "OhLaLa";
         zemljaPorekla = TURSKA;
         ID = "0662923085";
+        naLageru = true;
     }
-    Obucica(POL l,vrstaObuce ob,int v,nacinZatvaranja n,double d,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i)
+    Obucica(POL l,vrstaObuce ob,int v,nacinZatvaranja n,double d,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i,bool lag)
     {
         odeljenje = l;
         naziv = ob;
@@ -774,6 +836,7 @@ public:
         proizvodjac = p;
         zemljaPorekla = z;
         ID = i;
+        naLageru = lag;
     }
     Obucica(const Obucica &o)
     {
@@ -790,6 +853,7 @@ public:
         proizvodjac = o.proizvodjac;
         zemljaPorekla = o.zemljaPorekla;
         ID = o.ID;
+        naLageru = o.naLageru;
     }
     void ispis()
     {
@@ -997,8 +1061,9 @@ public:
         proizvodjac = "Gucci";
         zemljaPorekla = SRBIJA;
         ID = "8960123775";
+        naLageru = false;
     }
-    Aksesoaric(POL l,SEZONA e,aks a,double sir,double duz,double vis,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i)
+    Aksesoaric(POL l,SEZONA e,aks a,double sir,double duz,double vis,DinString o,double c,BOJA b,MODEL m,MATERIJAL mat,DinString p,ZEMLJA z,DinString i,bool lag)
     {
         odeljenje = l;
         period = e;
@@ -1014,6 +1079,7 @@ public:
         proizvodjac = p;
         zemljaPorekla = z;
         ID = i;
+        naLageru = lag;
     }
     Aksesoaric(const Aksesoaric &l)
     {
@@ -1031,6 +1097,7 @@ public:
         proizvodjac = l.proizvodjac;
         zemljaPorekla = l.zemljaPorekla;
         ID = l.ID;
+        naLageru = l.naLageru;
     }
     void ispis()
     {
@@ -1446,25 +1513,301 @@ public:
         }
     }
 };
-class Katalog{};
-class Osoba
-{
-/// izvesti prodavac i kupac prodavac moze da dodaje u prodavnicu
-
-};
-class Narudzbina{};
 class Korpa
 {
-///lista proizvoda dodaj obrisi p i kartica k i prodavnica p,osoba o
-///metode kupi dodaj u korpu oduzmi iz korpe
+private:
+    Lista<GornjiDelovi> gornjiUKorpu;
+    Lista<DonjiDelovi> donjiUKorpu;
+    Lista<Obucica> obucaUKorpu;
+    Lista<Aksesoaric> aksesoarUKorpuu;
+    int brojProizvodaUKorpi = 0;
+public:
+    bool dodajGornjiUKorpu(const GornjiDelovi &gg)
+        {
+            if(gg.getAkcija() == "U KORPI")
+            {
+                brojProizvodaUKorpi++;
+                return gornjiUKorpu.dodajElement(gornjiUKorpu.velicina()+1,gg);
+            }
+            return false;
+        }
+    bool dodajDonjiUKorpu(const DonjiDelovi &dd)
+    {
+        if(dd.getAkcija() == "U KORPI")
+        {
+            brojProizvodaUKorpi++;
+            return donjiUKorpu.dodajElement(donjiUKorpu.velicina()+1,dd);
+        }
+        return false;
+    }
+    bool dodajObucuUKorpu(const Obucica &oo)
+    {
+        if(oo.getAkcija() == "U KORPI")
+        {
+            brojProizvodaUKorpi++;
+            return obucaUKorpu.dodajElement(obucaUKorpu.velicina()+1,oo);
+        }
+        return false;
+    }
+    bool dodajAksesoarUKorpu(const Aksesoaric &aa)
+    {
+        if(aa.getAkcija() == "U KORPI")
+        {
+            brojProizvodaUKorpi++;
+            return aksesoarUKorpuu.dodajElement(aksesoarUKorpuu.velicina()+1,aa);
+        }
+        return false;
+    }
+
+    int getBrojUKorpi()const{return brojProizvodaUKorpi;}
+
+    void ispisGornjih()
+    {
+        if(gornjiUKorpu.velicina() == 0)
+        {
+            cout<<"Nema gornjih delova u korpi"<<endl;
+        } else
+        {
+            GornjiDelovi g;
+            cout<<"Gornji delovi u korpi :"<<endl;
+
+            for (int i = 1; i <= gornjiUKorpu.velicina(); i++)
+            {
+                gornjiUKorpu.izlistaj(i, g);
+                g.ispis();
+            }
+        }
+    }
+    void ispisDonjih()
+    {
+        if(donjiUKorpu.velicina() == 0)
+        {
+            cout<<"Nema donjih delova u korpi"<<endl;
+        }else
+        {
+            DonjiDelovi d;
+            cout<<"Donji delovi u korpi: "<<endl;
+            for(int i = 0; i <= donjiUKorpu.velicina(); i++)
+            {
+                donjiUKorpu.izlistaj(i,d);
+                d.ispis();
+            }
+        }
+    }
+    void ispisObuce()
+    {
+        if(obucaUKorpu.velicina() == 0)
+        {
+            cout<<"Nema obuce u korpi"<<endl;
+        }else
+        {
+            Obucica o;
+            cout<<"Obuca u korpi: "<<endl;
+            for(int i = 0; i <= obucaUKorpu.velicina(); i++)
+            {
+                obucaUKorpu.izlistaj(i,o);
+                o.ispis();
+            }
+        }
+    }
+    void ispisAksesoara()
+    {
+        if(aksesoarUKorpuu.velicina() == 0)
+        {
+            cout<<"Nema aksesoara u korpi"<<endl;
+        }else
+        {
+            Aksesoaric a;
+            cout<<"Aksesoari u korpi: "<<endl;
+            for(int i = 0; i <= aksesoarUKorpuu.velicina(); i++)
+            {
+                aksesoarUKorpuu.izlistaj(i,a);
+                a.ispis();
+            }
+        }
+    }
+    void ispisKorpe()
+    {
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        ispisGornjih();
+        ispisDonjih();
+        ispisObuce();
+        ispisAksesoara();
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+    }
 };
-class Lager{};
+class Lager
+{
+private:
+    Lista<GornjiDelovi> lagerGornjih;
+    Lista<DonjiDelovi> lagerDonjih;
+    Lista<Obucica> lagerObuce;
+    Lista<Aksesoaric> lagerAksesoara;
+public:
+     bool dodajLagerG(const GornjiDelovi &gg)
+        {
+            if(gg.getLager() == "Ima na lageru")
+            {
+                return lagerGornjih.dodajElement(lagerGornjih.velicina()+1,gg);
+            }
+            return false;
+        }
+     bool dodajLagerD(const DonjiDelovi &dd)
+        {
+            if(dd.getLager() == "Ima na lageru")
+            {
+                return lagerDonjih.dodajElement(lagerDonjih.velicina()+1,dd);
+            }
+            return false;
+        }
+     bool dodajLagerO(const Obucica &oo)
+        {
+            if(oo.getLager() == "Ima na lageru")
+            {
+                return lagerObuce.dodajElement(lagerObuce.velicina()+1,oo);
+            }
+            return false;
+        }
+     bool dodajLagerA(const Aksesoaric &aa)
+        {
+            if(aa.getLager() == "Ima na lageru")
+            {
+                return lagerAksesoara.dodajElement(lagerAksesoara.velicina()+1,aa);
+            }
+            return false;
+        }
+
+    void ispisG()
+    {
+        if(lagerGornjih.velicina() == 0)
+        {
+            cout<<"Nema gornjih delova na lageru"<<endl;
+        } else
+        {
+            GornjiDelovi g;
+            cout<<"Gornji delovi na lageru :"<<endl;
+
+            for (int i = 1; i <= lagerGornjih.velicina(); i++)
+            {
+                lagerGornjih.izlistaj(i, g);
+                g.ispis();
+            }
+        }
+    }
+    void ispisD()
+    {
+        if(lagerDonjih.velicina() == 0)
+        {
+            cout<<"Nema donjih delova na lageru"<<endl;
+        }else
+        {
+            DonjiDelovi d;
+            cout<<"Donji delovi na lageru: "<<endl;
+            for(int i = 0; i <= lagerDonjih.velicina(); i++)
+            {
+                lagerDonjih.izlistaj(i,d);
+                d.ispis();
+            }
+        }
+    }
+    void ispisO()
+    {
+        if(lagerObuce.velicina() == 0)
+        {
+            cout<<"Nema obuce na lageru"<<endl;
+        }else
+        {
+            Obucica o;
+            cout<<"Obuca na lageru: "<<endl;
+            for(int i = 0; i <= lagerObuce.velicina(); i++)
+            {
+                lagerObuce.izlistaj(i,o);
+                o.ispis();
+            }
+        }
+    }
+    void ispisA()
+    {
+        if(lagerAksesoara.velicina() == 0)
+        {
+            cout<<"Nema aksesoara na lageru"<<endl;
+        }else
+        {
+            Aksesoaric a;
+            cout<<"Aksesoari na lageru: "<<endl;
+            for(int i = 0; i <= lagerAksesoara.velicina(); i++)
+            {
+                lagerAksesoara.izlistaj(i,a);
+                a.ispis();
+            }
+        }
+    }
+    void ispisLagera()
+    {
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|KORPA|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        ispisG();
+        ispisD();
+        ispisO();
+        ispisA();
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+    }
+};
+class Katalog{};
+class Osoba{};
+class Narudzbina{};
 class Kartica{};
 class Kupovina{};
 class Isporuka{};
 class Kupac : public Osoba{};
-class Radnik : public Osoba{};
-class Mesto{/*lista mesta prodavnica*/};
+class Radnik : public Osoba{/*info*/};
+class Ulica
+{
+private:
+    DinString ime;
+    int broj;
+public:
+    void setIme(DinString i){ime = i;}
+    void setBroj(int b)
+    {
+        if(b>0)
+        {
+            broj = b;
+        }
+    }
+
+    DinString getIme()const {return ime;}
+    int getBroj()const {return broj;}
+
+    Ulica(){ime = "Okrugiceva"; broj = 16;}
+    Ulica(DinString im, int br){ime = im; broj = br;}
+    Ulica(const Ulica &u){ime = u.ime; broj = u.broj;}
+
+    void ispisUlice()
+    {
+        cout<<"Ulica: ";
+        cout<<getIme()<<","<<getBroj()<<endl;
+    }
+};
+class Mesto
+{
+private:
+    Ulica U;
+    DinString grad;
+public:
+    void setGrad(DinString g){grad = g;}
+    DinString getGrad(){return grad;}
+
+    Mesto(): U() {grad = "Novi Sad";}
+    Mesto(DinString i,int b,DinString g):U(i,b){grad = g;}
+    Mesto(const Mesto &m):U(m.U){grad = m.grad;}
+
+    void ispisMesta()
+    {
+        cout<<"Mesto moguce kupovine: ";
+        cout<<getGrad()<<"-";
+        U.ispisUlice();
+    }
+};
 class info{};
 class Prodavnica
 {
