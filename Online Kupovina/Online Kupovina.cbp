@@ -32,10 +32,33 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CallCentar.hpp" />
+		<Unit filename="DecijeOdeljenje.hpp" />
+		<Unit filename="InformacijeOProdavnici.hpp" />
+		<Unit filename="Isporuka.hpp" />
+		<Unit filename="Kartica.hpp" />
+		<Unit filename="Korpa.hpp" />
+		<Unit filename="Kupac.hpp" />
+		<Unit filename="Mesto.hpp" />
+		<Unit filename="MuskoOdeljene.hpp" />
+		<Unit filename="Osoba.hpp" />
+		<Unit filename="Poslodavac.hpp" />
+		<Unit filename="Prodavnica.hpp" />
+		<Unit filename="SavAksesoar.hpp" />
+		<Unit filename="SvaMestaProdavnica.hpp" />
+		<Unit filename="SvaObuca.hpp" />
+		<Unit filename="SvaOdeca.hpp" />
+		<Unit filename="Ulica.hpp" />
+		<Unit filename="ZenskoOdeljenje.hpp" />
+		<Unit filename="aksesoaric.hpp" />
 		<Unit filename="dinstring.cpp" />
 		<Unit filename="dinstring.hpp" />
+		<Unit filename="donjidelovi.hpp" />
+		<Unit filename="gornjidelovi.hpp" />
 		<Unit filename="lista.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="obucica.hpp" />
+		<Unit filename="proizvod.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

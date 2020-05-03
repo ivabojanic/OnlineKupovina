@@ -17,22 +17,6 @@ private:
 		ELEMENT *tail;
 		int brojE;
 public:
-		Lista(){head = NULL; tail = NULL; brojE = 0;}
-		Lista( Lista<T> &L)
-		{
-		    head = NULL;
-		    tail = NULL;
-		    brojE = 0;
-		    for(int i = 1;i <= L.velicina(); ++i)
-            {
-                T prom;
-                if(L.citaj(i,prom))
-                {
-                     dodaj(i,prom);
-                }
-            }
-		}
-        ~Lista(){obrisiListu();}
 		int velicina()const {return brojE;}
 		bool praznaLista()const
 		{
@@ -176,5 +160,21 @@ public:
            }
            return *this;
        }
+       Lista( Lista<T> &L)
+		{
+		    head = NULL;
+		    tail = NULL;
+		    brojE = 0;
+		    for(int i = 1;i <= L.velicina(); ++i)
+            {
+                T prom;
+                if(L.izlistaj(i,prom))
+                {
+                     dodajElement(i,prom);
+                }
+            }
+		}
+		Lista(){head = NULL; tail = NULL; brojE = 0;}
+        ~Lista(){obrisiListu();}
 };
 #endif
