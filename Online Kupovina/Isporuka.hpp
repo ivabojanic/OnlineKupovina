@@ -17,7 +17,7 @@ public:
 
     DinString getDatum()const{return datumIsporuke;}
     DinString getDostava()const{return dostavnaSluzba;}
-    double getCena()const{return cenaIsporuke;}
+    double getCena()const{return cenaIsporuke + 150.00;}
 
     void ispisIsporuke()
     {

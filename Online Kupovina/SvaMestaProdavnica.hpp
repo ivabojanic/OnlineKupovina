@@ -7,10 +7,9 @@ class SvaMestaProdavnica
 {
 private:
     Lista<Mesto> svaMesta;
-    int brojMesta;
 public:
-    void setBrojMesta(int br){brojMesta = br;}
-    int getBrojMesta()const{return brojMesta;}
+
+    Lista<Mesto> getMesta(){return svaMesta;}
 
     SvaMestaProdavnica& operator+=(Mesto& mesto)
     {
@@ -27,7 +26,7 @@ public:
         else
         {
             Mesto mm;
-            cout<<"Prodajna mesta ("<<getBrojMesta()<<"): "<<endl;
+            cout<<"Prodajna mesta: "<<endl;
             for(int i = 0; i <= svaMesta.velicina(); i++)
             {
                 svaMesta.izlistaj(i,mm);
@@ -35,6 +34,7 @@ public:
             }
         }
     }
+
 };
 
 #endif // SVAMESTAPRODAVNICA_HPP_INCLUDED

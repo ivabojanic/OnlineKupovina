@@ -13,30 +13,34 @@ private:
     Lista<DonjiDelovi> donjiUKorpu;
     Lista<Obucica> obucaUKorpu;
     Lista<Aksesoaric> aksesoarUKorpuu;
-    int brojProizvodaUKorpi = 0;
+    int ukupanRacun = 0;
 public:
-    bool dodajGornjiUKorpu(const GornjiDelovi &gg)
+    Korpa& operator+=(GornjiDelovi& gornjiDelovi)
     {
-        brojProizvodaUKorpi++;
-        return gornjiUKorpu.dodajElement(gornjiUKorpu.velicina()+1,gg);
+            gornjiUKorpu.dodajElement(gornjiUKorpu.velicina()+1, gornjiDelovi);
+            ukupanRacun+=gornjiDelovi.getCena();
+            return *this;
     }
-    bool dodajDonjiUKorpu(const DonjiDelovi &dd)
+    Korpa& operator+=(DonjiDelovi& donjiDelovi)
     {
-        brojProizvodaUKorpi++;
-        return donjiUKorpu.dodajElement(donjiUKorpu.velicina()+1,dd);
+            donjiUKorpu.dodajElement(donjiUKorpu.velicina()+1, donjiDelovi);
+            ukupanRacun+=donjiDelovi.getCena();
+            return *this;
     }
-    bool dodajObucuUKorpu(const Obucica &oo)
+    Korpa& operator+=(Obucica& obuca)
     {
-        brojProizvodaUKorpi++;
-        return obucaUKorpu.dodajElement(obucaUKorpu.velicina()+1,oo);
+            obucaUKorpu.dodajElement(obucaUKorpu.velicina()+1, obuca);
+            ukupanRacun+=obuca.getCena();
+            return *this;
     }
-    bool dodajAksesoarUKorpu(const Aksesoaric &aa)
+    Korpa& operator+=(Aksesoaric& aksesoar)
     {
-        brojProizvodaUKorpi++;
-        return aksesoarUKorpuu.dodajElement(aksesoarUKorpuu.velicina()+1,aa);
+            aksesoarUKorpuu.dodajElement(aksesoarUKorpuu.velicina()+1, aksesoar);
+            ukupanRacun+=aksesoar.getCena();
+            return *this;
     }
 
-    int getBrojUKorpi()const{return brojProizvodaUKorpi;}
+    int getUkupanRacun()const{return ukupanRacun;}
 
     void ispisGornjih()
     {

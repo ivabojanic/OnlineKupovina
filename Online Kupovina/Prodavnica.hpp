@@ -14,7 +14,6 @@ private:
     SavAksesoar A;
     Korpa K;
     Kupac kupac;
-    double ukupanRacun = 0;
     Isporuka i;
     informacijeOProdavnici info;
 
@@ -64,13 +63,16 @@ public:
         switch(vrs)
         {
         case GORNJI:
-            return "Gornji delovi";
+            return "GORNJI";
             break;
         case DONJI:
-            return "Donji delovi";
+            return "DONJI";
+            break;
+        case NEMA:
+            return "NEMA";
             break;
         default:
-            return "Nema vrste";
+            return "Nista";
             break;
         }
     }
@@ -78,54 +80,33 @@ public:
     Prodavnica(deo dd,POL p,vrsta v){d = dd; pol = p; vrs = v;}
     Prodavnica(const Prodavnica &pro){d = pro.d; pol = pro.pol; vrs = pro.vrs;}
 
-    void ispisiZeljeniDeoProdavnice(deo d,POL pol,vrsta vrs)
+    void ispisiZeljeniDeoProdavnice(string d,string pol,string vrs)
     {
-        if(d == ODECA)
+        if(d == "ODECA")
         {
             S.ispisiSvuOdecu(pol,vrs);
         }
-        else if(d == OBUCA)
+        else if(d == "OBUCA")
         {
             O.ispisiSvuObucu(pol);
         }
-        else if(d == AKSESOAR)
+        else if(d == "AKSESOAR")
         {
             A.ispisiSavAksesoar(pol);
         }
     }
 
-    void dodajZeljeniGornjiProizvodUKorpu(const GornjiDelovi &gornji)
-    {
-        K.dodajGornjiUKorpu(gornji);
-        ukupanRacun+=gornji.getCena();
-    }
-    void dodajZeljeniDonjiProizvodUKorpu(const DonjiDelovi &donji)
-    {
-        K.dodajDonjiUKorpu(donji);
-        ukupanRacun+=donji.getCena();
-    }
-    void dodajZeljenuObucuUKorpu(const Obucica &obuca)
-    {
-        K.dodajObucuUKorpu(obuca);
-        ukupanRacun+=obuca.getCena();
-    }
-    void dodajZeljeniAksesoarUKorpu(const Aksesoaric &aksesoar)
-    {
-        K.dodajAksesoarUKorpu(aksesoar);
-        ukupanRacun+=aksesoar.getCena();
-    }
-
     double getUkupnaCena()const
     {
-        return ukupanRacun;
+        return K.getUkupanRacun();
     }
 
     void ispisCeleKorpe(){K.ispisKorpe();}
 
-    void KupovinaProizvodaIzKorpe()
+    void KupovinaProizvodaIzKorpe(Kupac &kup, Isporuka &isp)
     {
-        kupac.KupiProzivod(ukupanRacun);
-        i.ispisIsporuke();
+        kup.KupiProzivod(getUkupnaCena());
+        isp.ispisIsporuke();
         cout<<"Ukupna cena paketa: "<<getUkupnaCena()+i.getCena()<<endl;
     }
     void ispisInformacijaOProdavnici(){info.ispisInformacija();}

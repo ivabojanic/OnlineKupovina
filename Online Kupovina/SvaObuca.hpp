@@ -12,13 +12,13 @@ private:
     ZenskoOdeljenje Z;
     DecijeOdeljenje D;
 public:
-    void ispisiSvuObucu(POL p)
+    void ispisiSvuObucu(string p)
     {
-        if(p == MUSKI)
+        if(p == "MUSKI")
         {
             M.ispisObucice();
         }
-        else if(p == ZENSKI)
+        else if(p == "ZENSKI")
         {
             Z.ispisObucice();
         }

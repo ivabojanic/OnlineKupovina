@@ -12,17 +12,17 @@ private:
     ZenskoOdeljenje Z;
     DecijeOdeljenje D;
 public:
-    void ispisiSavAksesoar(POL p)
+    void ispisiSavAksesoar(string p)
     {
-        if(p == MUSKI)
+        if(p == "MUSKI")
         {
             M.ispisAksesoarica();
         }
-        else if(p == ZENSKI)
+        else if(p == "ZENSKI")
         {
             Z.ispisAksesoarica();
         }
-        else if(p == DECIJI)
+        else if(p == "DECIJI")
         {
             D.ispisAksesoarica();
         }

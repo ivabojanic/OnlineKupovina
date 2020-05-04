@@ -5,7 +5,7 @@
 #include "ZenskoOdeljenje.hpp"
 #include "DecijeOdeljenje.hpp"
 
-enum vrsta {GORNJI,DONJI};
+enum vrsta {GORNJI,DONJI,NEMA};
 enum deo {ODECA,OBUCA,AKSESOAR};
 class SvaOdeca
 {
@@ -14,34 +14,50 @@ private:
     ZenskoOdeljenje Z;
     DecijeOdeljenje D;
 public:
-    void ispisiSvuOdecu(POL p,vrsta v)
+    void ispisiSvuOdecu(string p,string v)
     {
-        if(p == MUSKI)
+        if(p == "MUSKI")
         {
-            if(v == GORNJI)
+            if(v == "GORNJI")
             {
                M.ispisGornjih();
             }
-            else if(v == DONJI)
+            else if(v == "DONJI")
+            {
                 M.ispisDonjih();
+            }else if(v == "NEMA")
+            {
+                cout<<"Nije validna opcija za odecu"<<endl;
+            }
         }
-        else if(p == ZENSKI)
+
+        else if(p == "ZENSKI")
         {
-            if(v == GORNJI)
+            if(v == "GORNJI")
             {
                 Z.ispisGornjih();
             }
-            else if(v == DONJI)
+            else if(v == "DONJI")
+            {
                 Z.ispisDonjih();
+            }else if(v == "NEMA")
+            {
+                cout<<"Nije validna opcija za odecu"<<endl;
+            }
         }
-        else if(p == DECIJI)
+        else if(p == "DECIJI")
         {
-            if(v == GORNJI)
+            if(v == "GORNJI")
             {
                 D.ispisGornjih();
             }
-            else if(v == DONJI)
+            else if(v == "DONJI")
+            {
                 D.ispisDonjih();
+            }else if(v == "NEMA")
+            {
+                cout<<"Nije validna opcija za odecu"<<endl;
+            }
         }
     }
 };
