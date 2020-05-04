@@ -27,7 +27,7 @@ public:
         {
             Mesto mm;
             cout<<"Prodajna mesta: "<<endl;
-            for(int i = 0; i <= svaMesta.velicina(); i++)
+            for(int i = 1; i <= svaMesta.velicina(); i++)
             {
                 svaMesta.izlistaj(i,mm);
                 mm.ispisMesta();

@@ -12,6 +12,19 @@ private:
     ZenskoOdeljenje Z;
     DecijeOdeljenje D;
 public:
+    void dodajUMuski( Obucica &muski)
+    {
+        M+=muski;
+    }
+    void dodajUZenski( Obucica &zenski)
+    {
+        M+=zenski;
+    }
+    void dodajUDeciji( Obucica &decije)
+    {
+        M+=decije;
+    }
+
     void ispisiSvuObucu(string p)
     {
         if(p == "MUSKI")

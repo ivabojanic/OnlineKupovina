@@ -33,10 +33,10 @@ int meni()
         cout<<"\nIzaberite zeljenu operaciju:\n";
         cout<<" 1. Ispitivanje rada svih konstruktora(prazan,sa parametrima,kopije)"<<endl;
         cout<<" 2. Proba ispisa liste mesta prodavnica"<<endl;
-        cout<<" 3. Proba ispisa zeljenog dela prodavnice"<<endl;
-        cout<<" 4. Proba ispisa korpe"<<endl;
-        cout<<" 5. Proba ispisa konacnog racuna"<<endl;
-        cout<<" 6. Kupovina proizvoda iz korpe"<<endl;
+        cout<<" 3. Proba ispisa korpe"<<endl;
+        cout<<" 4. Proba ispisa konacnog racuna"<<endl;
+        cout<<" 5. Kupovina proizvoda iz korpe"<<endl;
+        cout<<" 6. Ispis informacija o prodavnici"<<endl;
         cout<<" 7. KRAJ RADA PROGRAMA";
         cout<<"\n>>>";
         cin>>izaberiOperaciju;
@@ -90,7 +90,7 @@ int main()
 
     ///konstruktori klase Kupac
     Kupac Ku;
-    Kupac Ku1("123456789","1234", 10000.00);
+    Kupac Ku1("123456789","1234", 1000000.00);
     Kupac Ku2(Ku);
 
     ///konstruktori klase Poslodavac
@@ -113,24 +113,23 @@ int main()
     mestasce+=M;
     mestasce+=M1;
 
-    mestasce.ispisSvihMesta();
-
-    ///proba ispisa zeljenog dela prodavnice
     Prodavnica prodavnica;
-    prodavnica.setDeo(ODECA);
-    prodavnica.setPol(MUSKI);
-    prodavnica.setVrsta(GORNJI);
 
-    Korpa korpica;
-    korpica+=G1;
-    korpica+=D1;
-    korpica+=O1;
-    korpica+=A1;
+    ///dodavanje u kropu
+    prodavnica.dodajGUKorpu(G1);
+    prodavnica.dodajDUKorpu(D1);
+    prodavnica.dodajOUKorpu(O1);
+
+    ///dodavanje u prodavnicu
+    SvaOdeca svaO;
+    svaO.dodajUZenski(G1);
+
+    informacijeOProdavnici Info;
 
     int operacija;
-    cout<<"---------------------------------"<<endl;
-    cout<<"\tDOBRODOSLI U PRODAVNICU"<<endl;
-    cout<<"---------------------------------"<<endl;
+    cout<<"-----------------------------------------"<<endl;
+    cout<<"\tDOBRODOSLI U IVINU PRODAVNICU"<<endl;
+    cout<<"-----------------------------------------"<<endl;
     do{
         operacija = meni();
         switch(operacija)
@@ -139,47 +138,47 @@ int main()
             G.ispis();
             G1.ispis();
             G2.ispis();
-
+            cout<<endl;
             D.ispis();
             D1.ispis();
             D2.ispis();
-
+            cout<<endl;
             O.ispis();
             O1.ispis();
             O2.ispis();
-
+            cout<<endl;
             A.ispis();
             A1.ispis();
             A2.ispis();
-
+            cout<<endl;
             U.ispisUlice();
             U1.ispisUlice();
             U2.ispisUlice();
-
+            cout<<endl;
             M.ispisMesta();
             M1.ispisMesta();
             M2.ispisMesta();
-
+            cout<<endl;
             K.ispisKartice();
             K1.ispisKartice();
             K2.ispisKartice();
-
+            cout<<endl;
             Ob.ispis();
             Ob1.ispis();
             Ob2.ispis();
-
+            cout<<endl;
             Ku.ispisKupca();
             Ku1.ispisKupca();
             Ku2.ispisKupca();
-
+            cout<<endl;
             P.ispisPoslodavca();
             P1.ispisPoslodavca();
             P2.ispisPoslodavca();
-
+            cout<<endl;
             I.ispisIsporuke();
             I1.ispisIsporuke();
             I2.ispisIsporuke();
-
+            cout<<endl;
             C.ispisCallCentra();
             C1.ispisCallCentra();
             C2.ispisCallCentra();
@@ -188,16 +187,16 @@ int main()
             mestasce.ispisSvihMesta();
             break;
         case 3:
-            prodavnica.ispisiZeljeniDeoProdavnice(prodavnica.getDeo(),prodavnica.getPol(),prodavnica.getVrsta());
+            prodavnica.ispisCeleKorpe();
             break;
         case 4:
-            korpica.ispisKorpe();
+            cout<<prodavnica.getUkupnaCena()<<" dinara";
             break;
         case 5:
-            cout<<prodavnica.getUkupnaCena();
+            prodavnica.KupovinaProizvodaIzKorpe(Ku1,I1);
             break;
         case 6:
-            prodavnica.KupovinaProizvodaIzKorpe(Ku1,I1);
+            Info.ispisInformacija(mestasce,P1,C1);
             break;
         case 7:
             exit(0);

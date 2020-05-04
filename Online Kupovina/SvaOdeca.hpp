@@ -14,6 +14,32 @@ private:
     ZenskoOdeljenje Z;
     DecijeOdeljenje D;
 public:
+    void dodajGornjUMuski( GornjiDelovi &muski)
+    {
+        M+=muski;
+    }
+    void dodajUZenski( GornjiDelovi &zenski)
+    {
+        M+=zenski;
+    }
+    void dodajUDeciji( GornjiDelovi &decije)
+    {
+        M+=decije;
+    }
+
+    void dodajDonjiUMuski( DonjiDelovi &muski)
+    {
+        M+=muski;
+    }
+    void dodajDonjiUZenski( DonjiDelovi &zenski)
+    {
+        M+=zenski;
+    }
+    void dodajDonjiUDeciji( DonjiDelovi &decije)
+    {
+        M+=decije;
+    }
+
     void ispisiSvuOdecu(string p,string v)
     {
         if(p == "MUSKI")

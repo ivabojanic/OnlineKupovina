@@ -6,7 +6,7 @@
 enum aks {NAOCARE,KACKET,TORBA,SESIR,NESESER,SAL,KAPA,RUKAVICE,RANAC,};
 class Aksesoaric : public Proizvod
 {
-private:
+protected:
     POL odeljenje;
     SEZONA period;
     aks naziv;

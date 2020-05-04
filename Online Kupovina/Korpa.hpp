@@ -46,11 +46,13 @@ public:
     {
         if(gornjiUKorpu.velicina() == 0)
         {
+            cout<<endl;
             cout<<"Nema gornjih delova u korpi"<<endl;
         }
         else
         {
             GornjiDelovi g;
+            cout<<endl;
             cout<<"Gornji delovi u korpi :"<<endl;
 
             for (int i = 1; i <= gornjiUKorpu.velicina(); i++)
@@ -64,13 +66,15 @@ public:
     {
         if(donjiUKorpu.velicina() == 0)
         {
+            cout<<endl;
             cout<<"Nema donjih delova u korpi"<<endl;
         }
         else
         {
             DonjiDelovi d;
+            cout<<endl;
             cout<<"Donji delovi u korpi: "<<endl;
-            for(int i = 0; i <= donjiUKorpu.velicina(); i++)
+            for(int i = 1; i <= donjiUKorpu.velicina(); i++)
             {
                 donjiUKorpu.izlistaj(i,d);
                 d.ispis();
@@ -81,13 +85,15 @@ public:
     {
         if(obucaUKorpu.velicina() == 0)
         {
+            cout<<endl;
             cout<<"Nema obuce u korpi"<<endl;
         }
         else
         {
             Obucica o;
+            cout<<endl;
             cout<<"Obuca u korpi: "<<endl;
-            for(int i = 0; i <= obucaUKorpu.velicina(); i++)
+            for(int i = 1; i <= obucaUKorpu.velicina(); i++)
             {
                 obucaUKorpu.izlistaj(i,o);
                 o.ispis();
@@ -98,13 +104,15 @@ public:
     {
         if(aksesoarUKorpuu.velicina() == 0)
         {
+            cout<<endl;
             cout<<"Nema aksesoara u korpi"<<endl;
         }
         else
         {
             Aksesoaric a;
+            cout<<endl;
             cout<<"Aksesoari u korpi: "<<endl;
-            for(int i = 0; i <= aksesoarUKorpuu.velicina(); i++)
+            for(int i = 1; i <= aksesoarUKorpuu.velicina(); i++)
             {
                 aksesoarUKorpuu.izlistaj(i,a);
                 a.ispis();
@@ -113,12 +121,12 @@ public:
     }
     void ispisKorpe()
     {
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|KORPA|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|KORPA|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         ispisGornjih();
         ispisDonjih();
         ispisObuce();
         ispisAksesoara();
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
     }
 };
 

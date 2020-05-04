@@ -16,8 +16,12 @@ private:
     Kupac kupac;
     Isporuka i;
     informacijeOProdavnici info;
+    SvaMestaProdavnica sva;
+    Poslodavac p;
+    CallCentar call;
 
 public:
+
     void setDeo(deo dd){d = dd;}
     void setPol(POL pp){pol = pp;}
     void setVrsta(vrsta v){vrs = v;}
@@ -80,6 +84,9 @@ public:
     Prodavnica(deo dd,POL p,vrsta v){d = dd; pol = p; vrs = v;}
     Prodavnica(const Prodavnica &pro){d = pro.d; pol = pro.pol; vrs = pro.vrs;}
 
+    SvaMestaProdavnica getSvaMesta()const{return sva;}
+    Poslodavac getPoslodavac()const{return p;}
+    CallCentar getCall()const{return call;}
     void ispisiZeljeniDeoProdavnice(string d,string pol,string vrs)
     {
         if(d == "ODECA")
@@ -96,6 +103,23 @@ public:
         }
     }
 
+    void dodajGUKorpu( GornjiDelovi &g)
+    {
+        K+=g;
+    }
+    void dodajDUKorpu( DonjiDelovi &d)
+    {
+        K+=d;
+    }
+    void dodajOUKorpu( Obucica &o)
+    {
+        K+=o;
+    }
+    void dodajAUKorpu( Aksesoaric &a)
+    {
+        K+=a;
+    }
+
     double getUkupnaCena()const
     {
         return K.getUkupanRacun();
@@ -109,7 +133,7 @@ public:
         isp.ispisIsporuke();
         cout<<"Ukupna cena paketa: "<<getUkupnaCena()+i.getCena()<<endl;
     }
-    void ispisInformacijaOProdavnici(){info.ispisInformacija();}
+    void ispisInformacijaOProdavnici(){info.ispisInformacija(getSvaMesta(),getPoslodavac(),getCall());}
 };
 
 #endif // PRODAVNICA_HPP_INCLUDED

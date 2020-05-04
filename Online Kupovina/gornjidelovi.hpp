@@ -10,7 +10,7 @@ enum SEZONA {PROLECE,LETO,JESEN,ZIMA};
 enum POL {MUSKI,ZENSKI,DECIJI};
 class GornjiDelovi : public Proizvod
 {
-private:
+protected:
     POL odeljenje;
     vrstaGornjegDela naziv;
     tipRukava tip;

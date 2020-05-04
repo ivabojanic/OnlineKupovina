@@ -7,7 +7,7 @@ enum vrstaObuce {STIKLE,SANDALE,BALETANKE,SPAGERICE,PATIKE,CIPELE,CIZME,PAPUCE,J
 enum nacinZatvaranja {PERTLE,CICAK,KAIS,BEZ};
 class Obucica : public Proizvod
 {
-private:
+protected:
     POL odeljenje;
     vrstaObuce naziv;
     int velicina;

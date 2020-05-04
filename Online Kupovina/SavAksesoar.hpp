@@ -12,6 +12,19 @@ private:
     ZenskoOdeljenje Z;
     DecijeOdeljenje D;
 public:
+    void dodajUMuski( Aksesoaric &muski)
+    {
+        M+=muski;
+    }
+    void dodajUZenski( Aksesoaric &zenski)
+    {
+        M+=zenski;
+    }
+    void dodajUDeciji( Aksesoaric &decije)
+    {
+        M+=decije;
+    }
+
     void ispisiSavAksesoar(string p)
     {
         if(p == "MUSKI")

@@ -11,11 +11,11 @@ class informacijeOProdavnici
     Poslodavac P;
     CallCentar C;
 public:
-    void ispisInformacija()
+    void ispisInformacija(SvaMestaProdavnica s,Poslodavac p, CallCentar call)
     {
-        sva.ispisSvihMesta();
-        P.ispis();
-        C.ispisCallCentra();
+        s.ispisSvihMesta();
+        p.ispis();
+        call.ispisCallCentra();
     }
 };
 
