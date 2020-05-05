@@ -20,11 +20,11 @@ public:
     }
     void dodajGornjiUZenski( GornjiDelovi &zenski)
     {
-        M+=zenski;
+        Z+=zenski;
     }
     void dodajGornjiUDeciji( GornjiDelovi &decije)
     {
-        M+=decije;
+        D+=decije;
     }
 
     void dodajDonjiUMuski( DonjiDelovi &muski)
@@ -33,11 +33,11 @@ public:
     }
     void dodajDonjiUZenski( DonjiDelovi &zenski)
     {
-        M+=zenski;
+        Z+=zenski;
     }
     void dodajDonjiUDeciji( DonjiDelovi &decije)
     {
-        M+=decije;
+        D+=decije;
     }
 
     void ispisiSvuOdecu()

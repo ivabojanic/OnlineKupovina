@@ -2,6 +2,15 @@
 #define PRODAVNICA_HPP_INCLUDED
 
 #include "Isporuka.hpp"
+#include "SvaObuca.hpp"
+#include "SvaOdeca.hpp"
+#include "SavAksesoar.hpp"
+#include "SvaMestaProdavnica.hpp"
+#include "InformacijeOProdavnici.hpp"
+#include "Kupac.hpp"
+#include "Poslodavac.hpp"
+#include "Korpa.hpp"
+#include "CallCentar.hpp"
 
 class Prodavnica
 {

@@ -66,7 +66,7 @@ int main()
 
     ///konstruktori klase Aksesoari
     Aksesoaric A;
-    Aksesoaric A1(ZENSKI, LETO, NAOCARE, 15.00, 15.00, 5.00, "Naocare za sunce sa crnim staklima", 2800.00, ZELENA, NOVI, PLASTIKA, "Gucci", SRBIJA, "8960123775", false);
+    Aksesoaric A1(MUSKI, LETO, NAOCARE, 15.00, 15.00, 5.00, "Naocare za sunce sa crnim staklima", 2800.00, ZELENA, NOVI, PLASTIKA, "Gucci", SRBIJA, "8960123775", false);
     Aksesoaric A2(A);
 
     ///konstruktori klase Ulica

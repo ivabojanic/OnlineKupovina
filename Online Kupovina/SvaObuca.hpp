@@ -18,11 +18,11 @@ public:
     }
     void dodajUZenski( Obucica &zenski)
     {
-        M+=zenski;
+        Z+=zenski;
     }
     void dodajUDeciji( Obucica &decije)
     {
-        M+=decije;
+        D+=decije;
     }
 
     void ispisiSvuObucu()

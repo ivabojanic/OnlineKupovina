@@ -18,11 +18,11 @@ public:
     }
     void dodajUZenski( Aksesoaric &zenski)
     {
-        M+=zenski;
+        Z+=zenski;
     }
     void dodajUDeciji( Aksesoaric &decije)
     {
-        M+=decije;
+        D+=decije;
     }
 
     void ispisiSavAksesoar()
