@@ -32,17 +32,18 @@ int meni()
     do{
         cout<<"\nIzaberite zeljenu operaciju:\n";
         cout<<" 1. Ispitivanje rada svih konstruktora(prazan,sa parametrima,kopije)"<<endl;
-        cout<<" 2. Proba ispisa liste mesta prodavnica"<<endl;
-        cout<<" 3. Proba ispisa korpe"<<endl;
-        cout<<" 4. Proba ispisa konacnog racuna"<<endl;
-        cout<<" 5. Kupovina proizvoda iz korpe"<<endl;
-        cout<<" 6. Ispis informacija o prodavnici"<<endl;
-        cout<<" 7. KRAJ RADA PROGRAMA";
+        cout<<" 2. Ispis proizvoda prodavnice"<<endl;
+        cout<<" 3. Proba ispisa liste mesta prodavnica"<<endl;
+        cout<<" 4. Proba ispisa korpe"<<endl;
+        cout<<" 5. Proba ispisa konacnog racuna"<<endl;
+        cout<<" 6. Kupovina proizvoda iz korpe"<<endl;
+        cout<<" 7. Ispis informacija o prodavnici"<<endl;
+        cout<<" 8. KRAJ RADA PROGRAMA";
         cout<<"\n>>>";
         cin>>izaberiOperaciju;
-        if(izaberiOperaciju < 1 || izaberiOperaciju > 7)
+        if(izaberiOperaciju < 1 || izaberiOperaciju > 8)
             cout<<"\nOpcija van opsega (1-6)! Izaberite zeljenu operaciju ponovo!\n";
-    }while(izaberiOperaciju < 1 || izaberiOperaciju > 7);
+    }while(izaberiOperaciju < 1 || izaberiOperaciju > 8);
     return izaberiOperaciju;
 }
 
@@ -121,8 +122,10 @@ int main()
     prodavnica.dodajOUKorpu(O1);
 
     ///dodavanje u prodavnicu
-    SvaOdeca svaO;
-    svaO.dodajUZenski(G1);
+
+    prodavnica.dodajUProdavnicuAksesoar(A1);
+    prodavnica.dodajUProdavnicuGornji(G1);
+    prodavnica.dodajUProdavnicuGornji(G);
 
     informacijeOProdavnici Info;
 
@@ -135,21 +138,21 @@ int main()
         switch(operacija)
         {
         case 1:
-            G.ispis();
-            G1.ispis();
-            G2.ispis();
+            cout<<G;
+            cout<<G1;
+            cout<<G2;
             cout<<endl;
-            D.ispis();
-            D1.ispis();
-            D2.ispis();
+            cout<<D;
+            cout<<D1;
+            cout<<D2;
             cout<<endl;
-            O.ispis();
-            O1.ispis();
-            O2.ispis();
+            cout<<O;
+            cout<<O1;
+            cout<<O2;
             cout<<endl;
-            A.ispis();
-            A1.ispis();
-            A2.ispis();
+            cout<<A;
+            cout<<A1;
+            cout<<A2;
             cout<<endl;
             U.ispisUlice();
             U1.ispisUlice();
@@ -184,24 +187,27 @@ int main()
             C2.ispisCallCentra();
             break;
         case 2:
-            mestasce.ispisSvihMesta();
+            prodavnica.ispisProizvodaProdavnice();
             break;
         case 3:
-            prodavnica.ispisCeleKorpe();
+            mestasce.ispisSvihMesta();
             break;
         case 4:
-            cout<<prodavnica.getUkupnaCena()<<" dinara";
+            prodavnica.ispisCeleKorpe();
             break;
         case 5:
-            prodavnica.KupovinaProizvodaIzKorpe(Ku1,I1);
+            cout<<prodavnica.getUkupnaCena()<<" dinara";
             break;
         case 6:
-            Info.ispisInformacija(mestasce,P1,C1);
+            prodavnica.KupovinaProizvodaIzKorpe(Ku1,I1);
             break;
         case 7:
+            Info.ispisInformacija(mestasce,P1,C1);
+            break;
+        case 8:
             exit(0);
         }
-    }while(operacija<7);
+    }while(operacija<8);
 
     return 0;
 }

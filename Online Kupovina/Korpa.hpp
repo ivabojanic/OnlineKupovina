@@ -58,7 +58,7 @@ public:
             for (int i = 1; i <= gornjiUKorpu.velicina(); i++)
             {
                 gornjiUKorpu.izlistaj(i, g);
-                g.ispis();
+                cout<<g;
             }
         }
     }
@@ -77,7 +77,7 @@ public:
             for(int i = 1; i <= donjiUKorpu.velicina(); i++)
             {
                 donjiUKorpu.izlistaj(i,d);
-                d.ispis();
+                cout<<d;
             }
         }
     }
@@ -96,7 +96,7 @@ public:
             for(int i = 1; i <= obucaUKorpu.velicina(); i++)
             {
                 obucaUKorpu.izlistaj(i,o);
-                o.ispis();
+                cout<<o;
             }
         }
     }
@@ -115,7 +115,7 @@ public:
             for(int i = 1; i <= aksesoarUKorpuu.velicina(); i++)
             {
                 aksesoarUKorpuu.izlistaj(i,a);
-                a.ispis();
+                cout<<a;
             }
         }
     }

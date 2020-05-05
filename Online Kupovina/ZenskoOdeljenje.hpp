@@ -71,7 +71,7 @@ public:
             for (int i = 1; i <= gornji.velicina(); i++)
             {
                 gornji.izlistaj(i, d);
-                d.ispis();
+                cout<<d;
             }
         }
     }
@@ -89,7 +89,7 @@ public:
             for (int i = 1; i <= donji.velicina(); i++)
             {
                 donji.izlistaj(i, d);
-                d.ispis();
+                cout<<d;
             }
         }
     }
@@ -107,7 +107,7 @@ public:
             for (int i = 1; i <= ob.velicina(); i++)
             {
                 ob.izlistaj(i, c);
-                c.ispis();
+                cout<<c;
             }
         }
     }
@@ -125,11 +125,11 @@ public:
             for (int i = 1; i <= akss.velicina(); i++)
             {
                 akss.izlistaj(i, a);
-                a.ispis();
+                cout<<a;
             }
         }
     }
-    void ispisZenskog()
+    void ispisZenskog(const ZenskoOdeljenje &z)
     {
         ispisGornjih();
         ispisDonjih();

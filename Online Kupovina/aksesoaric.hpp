@@ -244,16 +244,17 @@ public:
         ID = l.ID;
         naLageru = l.naLageru;
     }
-    void ispis()
+    friend ostream& operator<<(ostream& izlaz,  Aksesoaric &a)
     {
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"Naziv proizvoda: ";
-        cout<<getNaziv()<<endl;
-        cout<<"Kolekcija: ";
-        cout<<getPeriod()<<endl;
-        cout<<"Dimenzije proizvoda: ";
-        cout<<getSirina()<<"x"<<getDuzinu()<<"x"<<getVisina()<<endl;
-        Proizvod::ispisi();
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"Naziv proizvoda: ";
+        izlaz<<a.getNaziv()<<endl;
+        izlaz<<"Kolekcija: ";
+        izlaz<<a.getPeriod()<<endl;
+        izlaz<<"Dimenzije proizvoda: ";
+        izlaz<<a.getSirina()<<"x"<<a.getDuzinu()<<"x"<<a.getVisina()<<endl;
+        a.ispisi();
+        return izlaz;
     }
 };
 

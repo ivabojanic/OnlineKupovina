@@ -87,22 +87,66 @@ public:
     SvaMestaProdavnica getSvaMesta()const{return sva;}
     Poslodavac getPoslodavac()const{return p;}
     CallCentar getCall()const{return call;}
-    void ispisiZeljeniDeoProdavnice(string d,string pol,string vrs)
+
+    void dodajUProdavnicuGornji(GornjiDelovi &g)
     {
-        if(d == "ODECA")
+        if(g.getOdeljenje()== "MUSKO" )
         {
-            S.ispisiSvuOdecu(pol,vrs);
+            S.dodajGornjUMuski(g);
+        }else if(g.getOdeljenje() == "ZENSKO")
+        {
+            S.dodajGornjiUZenski(g);
+        }else if(g.getOdeljenje() == "DECIJE")
+        {
+            S.dodajGornjiUDeciji(g);
         }
-        else if(d == "OBUCA")
+    }
+    void dodajUProdavnicuDonji(DonjiDelovi &d)
+    {
+        if(d.getOdeljenje()== "MUSKO" )
         {
-            O.ispisiSvuObucu(pol);
+            S.dodajDonjiUMuski(d);
+        }else if(d.getOdeljenje() == "ZENSKO")
+        {
+            S.dodajDonjiUZenski(d);
+        }else if(d.getOdeljenje() == "DECIJE")
+        {
+            S.dodajDonjiUDeciji(d);
         }
-        else if(d == "AKSESOAR")
+    }
+    void dodajUProdavnicuObucu(Obucica &o)
+    {
+        if(o.getOdeljenje()== "MUSKO" )
         {
-            A.ispisiSavAksesoar(pol);
+            O.dodajUMuski(o);
+        }else if(o.getOdeljenje() == "ZENSKO")
+        {
+            O.dodajUZenski(o);
+        }else if(o.getOdeljenje() == "DECIJE")
+        {
+            O.dodajUDeciji(o);
+        }
+    }
+    void dodajUProdavnicuAksesoar(Aksesoaric &a)
+    {
+        if(a.getOdeljenje()== "MUSKO" )
+        {
+            A.dodajUMuski(a);
+        }else if(a.getOdeljenje() == "ZENSKO")
+        {
+            A.dodajUZenski(a);
+        }else if(a.getOdeljenje() == "DECIJE")
+        {
+            A.dodajUDeciji(a);
         }
     }
 
+    void ispisProizvodaProdavnice()
+    {
+        S.ispisiSvuOdecu();
+        O.ispisiSvuObucu();
+        A.ispisiSavAksesoar();
+    }
     void dodajGUKorpu( GornjiDelovi &g)
     {
         K+=g;

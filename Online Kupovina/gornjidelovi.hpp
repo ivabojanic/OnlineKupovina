@@ -254,15 +254,17 @@ public:
         ID = g.ID;
         naLageru = g.naLageru;
     }
-    void ispis()
+
+    friend ostream& operator<<(ostream& izlaz,  GornjiDelovi &g)
     {
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"Naziv proizvoda: ";
-        cout<<getNaziv()<<","<<getTip()<<endl;
-        cout<<"Velicina: ";
-        cout<<getVelicina()<<endl;
-        cout<<getSezona()<<endl;
-        Proizvod::ispisi();
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"Naziv proizvoda: ";
+        izlaz<<g.getNaziv()<<","<<g.getTip()<<endl;
+        izlaz<<"Velicina: ";
+        izlaz<<g.getVelicina()<<endl;
+        izlaz<<g.getSezona()<<endl;
+        g.ispisi();
+        return izlaz;
     }
 };
 

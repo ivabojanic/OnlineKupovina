@@ -25,20 +25,14 @@ public:
         M+=decije;
     }
 
-    void ispisiSavAksesoar(string p)
+    void ispisiSavAksesoar()
     {
-        if(p == "MUSKI")
-        {
-            M.ispisAksesoarica();
-        }
-        else if(p == "ZENSKI")
-        {
-            Z.ispisAksesoarica();
-        }
-        else if(p == "DECIJI")
-        {
-            D.ispisAksesoarica();
-        }
+        cout<<"MUSKI AKSESOAR:"<<endl;
+        M.ispisAksesoarica();
+        cout<<"ZENSKI AKSESOAR:"<<endl;
+        Z.ispisAksesoarica();
+        cout<<"DECIJI AKSESOAR:"<<endl;
+        D.ispisAksesoarica();
     }
 };
 

@@ -222,18 +222,19 @@ public:
         ID = o.ID;
         naLageru = o.naLageru;
     }
-    void ispis()
+    friend ostream& operator<<(ostream& izlaz,  Obucica &o)
     {
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"Naziv proizvoda: ";
-        cout<<getNaziv()<<endl;
-        cout<<"Velicina: ";
-        cout<<getVelicina()<<endl;
-        cout<<"Vrsta zakovcavanja: ";
-        cout<<getKopca()<<endl;
-        cout<<"Debljina djona: ";
-        cout<<getDebljina()<<endl;
-        Proizvod::ispisi();
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"Naziv proizvoda: ";
+        izlaz<<o.getNaziv()<<endl;
+        izlaz<<"Velicina: ";
+        izlaz<<o.getVelicina()<<endl;
+        izlaz<<"Vrsta zakovcavanja: ";
+        izlaz<<o.getKopca()<<endl;
+        izlaz<<"Debljina djona: ";
+        izlaz<<o.getDebljina()<<endl;
+        o.ispisi();
+        return izlaz;
     }
 };
 

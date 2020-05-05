@@ -25,18 +25,14 @@ public:
         M+=decije;
     }
 
-    void ispisiSvuObucu(string p)
+    void ispisiSvuObucu()
     {
-        if(p == "MUSKI")
-        {
-            M.ispisObucice();
-        }
-        else if(p == "ZENSKI")
-        {
-            Z.ispisObucice();
-        }
-        else
-            D.ispisObucice();
+       cout<<"MUSKA OBUCA:"<<endl;
+       M.ispisObucice();
+       cout<<"ZENSKA OBUCA:"<<endl;
+       Z.ispisObucice();
+       cout<<"DECIJA OBUCA:"<<endl;
+       D.ispisObucice();
     }
 };
 

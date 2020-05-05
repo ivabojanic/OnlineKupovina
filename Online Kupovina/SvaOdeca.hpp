@@ -18,11 +18,11 @@ public:
     {
         M+=muski;
     }
-    void dodajUZenski( GornjiDelovi &zenski)
+    void dodajGornjiUZenski( GornjiDelovi &zenski)
     {
         M+=zenski;
     }
-    void dodajUDeciji( GornjiDelovi &decije)
+    void dodajGornjiUDeciji( GornjiDelovi &decije)
     {
         M+=decije;
     }
@@ -40,51 +40,17 @@ public:
         M+=decije;
     }
 
-    void ispisiSvuOdecu(string p,string v)
+    void ispisiSvuOdecu()
     {
-        if(p == "MUSKI")
-        {
-            if(v == "GORNJI")
-            {
-               M.ispisGornjih();
-            }
-            else if(v == "DONJI")
-            {
-                M.ispisDonjih();
-            }else if(v == "NEMA")
-            {
-                cout<<"Nije validna opcija za odecu"<<endl;
-            }
-        }
-
-        else if(p == "ZENSKI")
-        {
-            if(v == "GORNJI")
-            {
-                Z.ispisGornjih();
-            }
-            else if(v == "DONJI")
-            {
-                Z.ispisDonjih();
-            }else if(v == "NEMA")
-            {
-                cout<<"Nije validna opcija za odecu"<<endl;
-            }
-        }
-        else if(p == "DECIJI")
-        {
-            if(v == "GORNJI")
-            {
-                D.ispisGornjih();
-            }
-            else if(v == "DONJI")
-            {
-                D.ispisDonjih();
-            }else if(v == "NEMA")
-            {
-                cout<<"Nije validna opcija za odecu"<<endl;
-            }
-        }
+        cout<<"MUSKA ODECA"<<endl;
+        M.ispisGornjih();
+        M.ispisDonjih();
+        cout<<"ZENSKA ODECA"<<endl;
+        Z.ispisGornjih();
+        Z.ispisDonjih();
+        cout<<"DECIJA ODECA"<<endl;
+        D.ispisGornjih();
+        D.ispisDonjih();
     }
 };
 

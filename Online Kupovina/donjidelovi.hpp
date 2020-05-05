@@ -160,14 +160,15 @@ public:
         ID = d.ID;
         naLageru = d.naLageru;
     }
-    void ispis()
+    friend ostream& operator<<(ostream& izlaz,  DonjiDelovi &d)
     {
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"Naziv proizvoda: ";
-        cout<<getVrsta()<<endl;
-        cout<<"Velicina: ";
-        cout<<getVelicina()<<endl;
-        Proizvod::ispisi();
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"Naziv proizvoda: ";
+        izlaz<<d.getVrsta()<<endl;
+        izlaz<<"Velicina: ";
+        izlaz<<d.getVelicina()<<endl;
+        d.ispisi();
+        return izlaz;
     }
 };
 
