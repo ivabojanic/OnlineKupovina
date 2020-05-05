@@ -31,6 +31,7 @@ public:
             {
                 svaMesta.izlistaj(i,mm);
                 mm.ispisMesta();
+                cout<<endl;
             }
         }
     }

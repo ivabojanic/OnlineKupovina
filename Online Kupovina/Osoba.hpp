@@ -28,7 +28,6 @@ public:
 
     void ispis()
     {
-        cout<<"Informacije o osobi: "<<endl;
         cout<<getIme()<<","<<getPrezime()<<endl;
         cout<<getEmail()<<endl;
         cout<<"+381"<<getBrojTelefona()<<endl;

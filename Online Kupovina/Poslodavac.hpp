@@ -21,11 +21,15 @@ public:
         cout<<getNazivRadnje()<<endl;
     }
 
-    void ispisPoslodavca()
+     friend ostream& operator<<(ostream& izlaz,  Poslodavac &p)
     {
-        ispisRadnje();
-        Osoba::ispis();
+        izlaz<<"Informacije o poslodavcu: "<<endl;
+        p.ispisRadnje();
+        p.ispis();
+        izlaz<<endl;
+        return izlaz;
     }
+
 };
 
 #endif // POSLODAVAC_HPP_INCLUDED

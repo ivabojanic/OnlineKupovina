@@ -14,8 +14,10 @@ public:
 
     void ispisKupca()
     {
+        cout<<"Informacije o kupcu: "<<endl;
         Osoba::ispis();
         k.ispisKartice();
+        cout<<endl;
     }
     void KupiProzivod(double cenaProizvoda)
     {

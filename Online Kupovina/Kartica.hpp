@@ -37,6 +37,7 @@ public:
         cout<<getnoKartice()<<endl;
         cout<<"Iznos novca na kartici: ";
         cout<<getIznosNovca()<<endl;
+        cout<<endl;
     }
 };
 
