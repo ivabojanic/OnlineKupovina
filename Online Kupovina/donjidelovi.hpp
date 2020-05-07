@@ -11,12 +11,22 @@ protected:
     vrstaDonjegDela naziv;
     int velicina;
 public:
-    void setOdeljenje(POL p){odeljenje = p;}
-    void setNaziv(vrstaDonjegDela n){naziv = n;}
+    void setOdeljenje(POL p)
+    {
+        odeljenje = p;
+    }
+    void setNaziv(vrstaDonjegDela n)
+    {
+        naziv = n;
+    }
     void setVelicina(int v)
     {
         if(v >= 18 && v <= 40)
+        {
             velicina = v;
+        }
+        else
+            cout<<"Nije uneta validna vrednost"<<endl;
     }
     string getMaterijal()const
     {
@@ -109,10 +119,7 @@ public:
     }
     int getVelicina()const
     {
-        if(velicina >=18 && velicina <= 40)
-            return velicina;
-        else
-            return 0;
+        return velicina;
     }
     DonjiDelovi()
     {

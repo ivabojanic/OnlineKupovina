@@ -14,15 +14,26 @@ protected:
     double duzina;
     double visina;
 public:
-    void setOdeljenje(POL p){odeljenje = p;}
-    void setPeriod(SEZONA s){period = s;}
-    void setNaziv(aks n){naziv = n;}
+    void setOdeljenje(POL p)
+    {
+        odeljenje = p;
+    }
+    void setPeriod(SEZONA s)
+    {
+        period = s;
+    }
+    void setNaziv(aks n)
+    {
+        naziv = n;
+    }
     void setSirina(double s)
     {
         if(s > 0)
         {
             sirina = s;
         }
+        else
+            cout<<"Nije uneta validna vrednost"<<endl;
     }
     void setDuzina(double d)
     {
@@ -30,6 +41,8 @@ public:
         {
             duzina = d;
         }
+        else
+            cout<<"Nije uneta validna vrednost"<<endl;
     }
     void setVisina(double v)
     {
@@ -37,6 +50,8 @@ public:
         {
             visina = v;
         }
+        else
+            cout<<"Nije uneta validna vrednost"<<endl;
     }
 
     string getPeriod()const

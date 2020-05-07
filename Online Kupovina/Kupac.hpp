@@ -12,8 +12,14 @@ public:
     Kupac(DinString nk, DinString p, double i):k(nk,p,i) {}
     Kupac(const Kupac &kk):k(kk.k) {}
 
-    void setKartica(Kartica kart){k = kart;}
-    Kartica getKartica()const{return k;}
+    void setKartica(Kartica kart)
+    {
+        k = kart;
+    }
+    Kartica getKartica()const
+    {
+        return k;
+    }
 
     void ispisKupca()
     {

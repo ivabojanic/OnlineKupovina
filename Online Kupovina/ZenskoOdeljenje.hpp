@@ -14,15 +14,39 @@ private:
     Lista<Obucica> ob;
     Lista<Aksesoaric> akss;
 public:
-     void setGornji(Lista<GornjiDelovi> g){gornji = g;}
-     void setDonji(Lista<DonjiDelovi> d){donji = d;}
-     void setObuca(Lista<Obucica> o){ob = o;}
-     void setAksesoar(Lista<Aksesoaric> a){akss = a;}
+    void setGornji(Lista<GornjiDelovi> g)
+    {
+        gornji = g;
+    }
+    void setDonji(Lista<DonjiDelovi> d)
+    {
+        donji = d;
+    }
+    void setObuca(Lista<Obucica> o)
+    {
+        ob = o;
+    }
+    void setAksesoar(Lista<Aksesoaric> a)
+    {
+        akss = a;
+    }
 
-     Lista<GornjiDelovi> getGornji(){return gornji;}
-     Lista<DonjiDelovi> getDonji(){return donji;}
-     Lista<Obucica> getOb(){return ob;}
-     Lista<Aksesoaric> getAkss(){return akss;}
+    Lista<GornjiDelovi> getGornji()
+    {
+        return gornji;
+    }
+    Lista<DonjiDelovi> getDonji()
+    {
+        return donji;
+    }
+    Lista<Obucica> getOb()
+    {
+        return ob;
+    }
+    Lista<Aksesoaric> getAkss()
+    {
+        return akss;
+    }
 
     ZenskoOdeljenje& operator+=(GornjiDelovi& gornjiDelovi)
     {
@@ -30,7 +54,7 @@ public:
         {
             gornji.dodajElement(gornji.velicina()+1, gornjiDelovi);
         }
-            return *this;
+        return *this;
     }
     ZenskoOdeljenje& operator+=(DonjiDelovi& donjiDelovi)
     {
@@ -38,7 +62,7 @@ public:
         {
             donji.dodajElement(donji.velicina()+1, donjiDelovi);
         }
-            return *this;
+        return *this;
     }
     ZenskoOdeljenje& operator+=(Obucica& obuca)
     {
@@ -46,7 +70,7 @@ public:
         {
             ob.dodajElement(ob.velicina()+1, obuca);
         }
-            return *this;
+        return *this;
     }
     ZenskoOdeljenje& operator+=(Aksesoaric& aksesoar)
     {
@@ -54,7 +78,7 @@ public:
         {
             akss.dodajElement(akss.velicina()+1, aksesoar);
         }
-            return *this;
+        return *this;
     }
 
     void ispisGornjih()

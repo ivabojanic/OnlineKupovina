@@ -17,11 +17,26 @@ protected:
     velicinaOdece velicina;
     SEZONA sezona;
 public:
-    void setOdeljenje(POL p){odeljenje = p;}
-    void setNaziv(vrstaGornjegDela n){naziv = n;}
-    void setTip(tipRukava t){tip = t;}
-    void setVelicina(velicinaOdece v){velicina = v;}
-    void setSezona(SEZONA s){sezona = s;}
+    void setOdeljenje(POL p)
+    {
+        odeljenje = p;
+    }
+    void setNaziv(vrstaGornjegDela n)
+    {
+        naziv = n;
+    }
+    void setTip(tipRukava t)
+    {
+        tip = t;
+    }
+    void setVelicina(velicinaOdece v)
+    {
+        velicina = v;
+    }
+    void setSezona(SEZONA s)
+    {
+        sezona = s;
+    }
 
     string getOdeljenje()const
     {

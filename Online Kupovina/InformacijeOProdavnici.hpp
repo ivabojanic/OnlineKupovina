@@ -11,6 +11,32 @@ class informacijeOProdavnici
     Poslodavac P;
     CallCentar C;
 public:
+    void setSvaMesta(SvaMestaProdavnica m)
+    {
+        sva = m;
+    }
+    void setPoslodavca(Poslodavac posao)
+    {
+        P = posao;
+    }
+    void setCall(CallCentar call)
+    {
+        C = call;
+    }
+
+    SvaMestaProdavnica getSvaMesta()const
+    {
+        return sva;
+    }
+    Poslodavac getPoslodavac()const
+    {
+        return P;
+    }
+    CallCentar getCall()const
+    {
+        return C;
+    }
+
     void ispisInformacija(SvaMestaProdavnica s,Poslodavac p, CallCentar call)
     {
         s.ispisSvihMesta();

@@ -5,8 +5,6 @@
 #include "ZenskoOdeljenje.hpp"
 #include "DecijeOdeljenje.hpp"
 
-enum vrsta {GORNJI,DONJI,NEMA};
-enum deo {ODECA,OBUCA,AKSESOAR};
 class SvaOdeca
 {
 private:

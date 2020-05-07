@@ -1,11 +1,13 @@
 #include "dinstring.hpp"
 
-DinString::DinString() {
+DinString::DinString()
+{
     duzina = 0;
     text = NULL;
 }
 
-DinString::DinString(const char ulaz[]) {
+DinString::DinString(const char ulaz[])
+{
     duzina = 0;
     while(ulaz[duzina] != '\0')
         duzina++;
@@ -17,7 +19,8 @@ DinString::DinString(const char ulaz[]) {
     text[duzina] = '\0';
 }
 
-DinString::DinString(const DinString& ds) {
+DinString::DinString(const DinString& ds)
+{
     duzina = ds.duzina;
 
     text = new char[duzina + 1];
@@ -27,24 +30,30 @@ DinString::DinString(const DinString& ds) {
     text[duzina] = '\0';
 }
 
-DinString::~DinString() {
+DinString::~DinString()
+{
     delete[] text;
 }
 
-int DinString::length() const {
+int DinString::length() const
+{
     return duzina;
 }
 
-char& DinString::operator[] (int i) {
+char& DinString::operator[] (int i)
+{
     return text[i];
 }
 
-char DinString::operator[] (int i) const {
+char DinString::operator[] (int i) const
+{
     return text[i];
 }
 
-DinString& DinString::operator=(const DinString& ds) {
-    if(this != &ds) {
+DinString& DinString::operator=(const DinString& ds)
+{
+    if(this != &ds)
+    {
         delete[] text;
         duzina = ds.duzina;
         text = new char[duzina + 1];
@@ -57,7 +66,8 @@ DinString& DinString::operator=(const DinString& ds) {
     return *this;
 }
 
-DinString& DinString::operator+=(const DinString& ds) {
+DinString& DinString::operator+=(const DinString& ds)
+{
     int i;
     char *tempText = new char[duzina + ds.duzina + 1];
     for (i = 0; i < duzina; i++)
@@ -74,7 +84,8 @@ DinString& DinString::operator+=(const DinString& ds) {
     return *this;
 }
 
-bool operator==(const DinString& ds1, const DinString& ds2){
+bool operator==(const DinString& ds1, const DinString& ds2)
+{
     if(ds1.duzina != ds2.duzina)
         return false;
 
@@ -85,7 +96,8 @@ bool operator==(const DinString& ds1, const DinString& ds2){
     return true;
 }
 
-bool operator!=(const DinString& ds1, const DinString& ds2){
+bool operator!=(const DinString& ds1, const DinString& ds2)
+{
     if(ds1.duzina != ds2.duzina)
         return true;
 
@@ -96,7 +108,8 @@ bool operator!=(const DinString& ds1, const DinString& ds2){
     return false;
 }
 
-DinString operator+(const DinString& ds1, const DinString& ds2){
+DinString operator+(const DinString& ds1, const DinString& ds2)
+{
     DinString temp;
     temp.duzina = ds1.duzina + ds2.duzina;
 
@@ -116,7 +129,8 @@ DinString operator+(const DinString& ds1, const DinString& ds2){
 
 
 
-ostream& operator<<(ostream& out, const DinString& ds) {
+ostream& operator<<(ostream& out, const DinString& ds)
+{
     if(ds.duzina > 0)
         out << ds.text;
 

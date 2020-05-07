@@ -15,43 +15,73 @@ private:
     Lista<Aksesoaric> aksesoarUKorpuu;
     double ukupanRacun = 0;
 public:
-    void setGornjiUkorpu(Lista<GornjiDelovi> &gor){gornjiUKorpu = gor;}
-    void setDonjiUKorpu(Lista<DonjiDelovi> &dol){donjiUKorpu = dol;}
-    void setObucaUKorpu(Lista<Obucica> &obo){obucaUKorpu = obo;}
-    void setAksesoarUKorpu(Lista<Aksesoaric> &akse){aksesoarUKorpuu = akse;}
+    void setGornjiUkorpu(Lista<GornjiDelovi> &gor)
+    {
+        gornjiUKorpu = gor;
+    }
+    void setDonjiUKorpu(Lista<DonjiDelovi> &dol)
+    {
+        donjiUKorpu = dol;
+    }
+    void setObucaUKorpu(Lista<Obucica> &obo)
+    {
+        obucaUKorpu = obo;
+    }
+    void setAksesoarUKorpu(Lista<Aksesoaric> &akse)
+    {
+        aksesoarUKorpuu = akse;
+    }
 
-    Lista<GornjiDelovi> getGornjiKorpa()const{return gornjiUKorpu;}
-    Lista<DonjiDelovi> getDonjiKorpa()const{return donjiUKorpu;}
-    Lista<Obucica> getObucaKorpa()const{return obucaUKorpu;}
-    Lista<Aksesoaric> getAksesoarKorpa()const{return aksesoarUKorpuu;}
+    Lista<GornjiDelovi> getGornjiKorpa()const
+    {
+        return gornjiUKorpu;
+    }
+    Lista<DonjiDelovi> getDonjiKorpa()const
+    {
+        return donjiUKorpu;
+    }
+    Lista<Obucica> getObucaKorpa()const
+    {
+        return obucaUKorpu;
+    }
+    Lista<Aksesoaric> getAksesoarKorpa()const
+    {
+        return aksesoarUKorpuu;
+    }
 
     Korpa& operator+=(GornjiDelovi& gornjiDelovi)
     {
-            gornjiUKorpu.dodajElement(gornjiUKorpu.velicina()+1, gornjiDelovi);
-            ukupanRacun+=gornjiDelovi.getCena();
-            return *this;
+        gornjiUKorpu.dodajElement(gornjiUKorpu.velicina()+1, gornjiDelovi);
+        ukupanRacun+=gornjiDelovi.getCena();
+        return *this;
     }
     Korpa& operator+=(DonjiDelovi& donjiDelovi)
     {
-            donjiUKorpu.dodajElement(donjiUKorpu.velicina()+1, donjiDelovi);
-            ukupanRacun+=donjiDelovi.getCena();
-            return *this;
+        donjiUKorpu.dodajElement(donjiUKorpu.velicina()+1, donjiDelovi);
+        ukupanRacun+=donjiDelovi.getCena();
+        return *this;
     }
     Korpa& operator+=(Obucica& obuca)
     {
-            obucaUKorpu.dodajElement(obucaUKorpu.velicina()+1, obuca);
-            ukupanRacun+=obuca.getCena();
-            return *this;
+        obucaUKorpu.dodajElement(obucaUKorpu.velicina()+1, obuca);
+        ukupanRacun+=obuca.getCena();
+        return *this;
     }
     Korpa& operator+=(Aksesoaric& aksesoar)
     {
-            aksesoarUKorpuu.dodajElement(aksesoarUKorpuu.velicina()+1, aksesoar);
-            ukupanRacun+=aksesoar.getCena();
-            return *this;
+        aksesoarUKorpuu.dodajElement(aksesoarUKorpuu.velicina()+1, aksesoar);
+        ukupanRacun+=aksesoar.getCena();
+        return *this;
     }
 
-    void setRacun(double u){ukupanRacun = u;}
-    double getUkupanRacun()const{return ukupanRacun;}
+    void setRacun(double u)
+    {
+        ukupanRacun = u;
+    }
+    double getUkupanRacun()const
+    {
+        return ukupanRacun;
+    }
 
     void ispisGornjih()
     {

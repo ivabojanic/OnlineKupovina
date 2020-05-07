@@ -8,13 +8,19 @@ class SvaMestaProdavnica
 private:
     Lista<Mesto> svaMesta;
 public:
-    void setListuMesta(Lista<Mesto> &mes){svaMesta = mes;}
-    Lista<Mesto> getMesta(){return svaMesta;}
+    void setListuMesta(Lista<Mesto> &mes)
+    {
+        svaMesta = mes;
+    }
+    Lista<Mesto> getMesta()
+    {
+        return svaMesta;
+    }
 
     SvaMestaProdavnica& operator+=(Mesto& mesto)
     {
-            svaMesta.dodajElement(svaMesta.velicina()+1, mesto);
-            return *this;
+        svaMesta.dodajElement(svaMesta.velicina()+1, mesto);
+        return *this;
     }
 
     void ispisSvihMesta()

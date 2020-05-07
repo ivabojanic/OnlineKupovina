@@ -14,28 +14,53 @@ protected:
     nacinZatvaranja kopca;
     double debljinaDjona;
 public:
-    void setOdeljenje(POL p){odeljenje = p;}
-    void setNaziv(vrstaObuce v){naziv = v;}
+    void setOdeljenje(POL p)
+    {
+        odeljenje = p;
+    }
+    void setNaziv(vrstaObuce v)
+    {
+        naziv = v;
+    }
     void setVelicina(int v)
     {
         if(odeljenje == MUSKI)
         {
             if(velicina >= 38 && velicina <= 47)
+            {
                 velicina = v;
+            }
+            else
+                cout<<"Nije uneta validna vrednost"<<endl;
+
         }
         else if(odeljenje == ZENSKI)
         {
             if(velicina >= 36 && velicina <= 42)
+            {
                 velicina = v;
+            }
+            else
+                cout<<"Nije uneta validna vrednost"<<endl;
         }
-        else
+        else if(odeljenje == DECIJI)
         {
             if(velicina >= 22 && velicina <= 35)
+            {
                 velicina = v;
+            }
+            else
+                cout<<"Nije uneta validna vrednost"<<endl;
         }
     }
-    void setZatvaranje(nacinZatvaranja n){kopca = n;}
-    void setDebljina(double d){debljinaDjona = d;}
+    void setZatvaranje(nacinZatvaranja n)
+    {
+        kopca = n;
+    }
+    void setDebljina(double d)
+    {
+        debljinaDjona = d;
+    }
 
     string getMaterijal()const
     {
@@ -141,12 +166,7 @@ public:
     }
     int getVelicina()const
     {
-        if(velicina >= 22 && velicina <= 47)
-        {
-            return velicina;
-        }
-        else
-            return 0;
+        return velicina;
     }
     string getKopca()const
     {
@@ -169,7 +189,10 @@ public:
             break;
         }
     }
-    double getDebljina()const{return debljinaDjona;}
+    double getDebljina()const
+    {
+        return debljinaDjona;
+    }
 
     Obucica()
     {

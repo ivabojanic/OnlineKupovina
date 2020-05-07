@@ -8,12 +8,27 @@ class Poslodavac : public Osoba
 private:
     DinString nazivRadnje;
 public:
-    Poslodavac(){nazivRadnje = "Sinsay";}
-    Poslodavac(DinString n){nazivRadnje = n;}
-    Poslodavac(const Poslodavac &p){nazivRadnje = p.nazivRadnje;}
+    Poslodavac()
+    {
+        nazivRadnje = "Sinsay";
+    }
+    Poslodavac(DinString n)
+    {
+        nazivRadnje = n;
+    }
+    Poslodavac(const Poslodavac &p)
+    {
+        nazivRadnje = p.nazivRadnje;
+    }
 
-    void setNazivRadnje(DinString n){nazivRadnje = n;}
-    DinString getNazivRadnje()const{return nazivRadnje;}
+    void setNazivRadnje(DinString n)
+    {
+        nazivRadnje = n;
+    }
+    DinString getNazivRadnje()const
+    {
+        return nazivRadnje;
+    }
 
     void ispisRadnje()
     {
@@ -21,7 +36,7 @@ public:
         cout<<getNazivRadnje()<<endl;
     }
 
-     friend ostream& operator<<(ostream& izlaz,  Poslodavac &p)
+    friend ostream& operator<<(ostream& izlaz,  Poslodavac &p)
     {
         izlaz<<"Informacije o poslodavcu: "<<endl;
         p.ispisRadnje();

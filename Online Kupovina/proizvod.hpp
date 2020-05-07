@@ -18,18 +18,51 @@ protected:
     DinString ID;
     bool naLageru;
 public:
-    void setOpis(DinString o){opis = o;}
-    void setCena(double c){cena = c;}
-    void setBoja(BOJA b){boja = b;}
-    void setModel(MODEL m){model = m;}
-    void setMaterijal(MATERIJAL mat){materijal = mat;}
-    void setProizvodjac(DinString p){proizvodjac = p;}
-    void setZemlja(ZEMLJA z){zemljaPorekla = z;}
-    void setID(DinString i){ID = i;}
-    void setLager(bool l){naLageru = l;}
+    void setOpis(DinString o)
+    {
+        opis = o;
+    }
+    void setCena(double c)
+    {
+        cena = c;
+    }
+    void setBoja(BOJA b)
+    {
+        boja = b;
+    }
+    void setModel(MODEL m)
+    {
+        model = m;
+    }
+    void setMaterijal(MATERIJAL mat)
+    {
+        materijal = mat;
+    }
+    void setProizvodjac(DinString p)
+    {
+        proizvodjac = p;
+    }
+    void setZemlja(ZEMLJA z)
+    {
+        zemljaPorekla = z;
+    }
+    void setID(DinString i)
+    {
+        ID = i;
+    }
+    void setLager(bool l)
+    {
+        naLageru = l;
+    }
 
-    DinString getOpis()const{return opis;}
-    double getCena()const{return cena;}
+    DinString getOpis()const
+    {
+        return opis;
+    }
+    double getCena()const
+    {
+        return cena;
+    }
     string getBoja()const
     {
         switch(boja)
@@ -94,7 +127,10 @@ public:
         }
     }
     virtual string getMaterijal()const = 0;
-    DinString getProizvodjac()const{return proizvodjac;}
+    DinString getProizvodjac()const
+    {
+        return proizvodjac;
+    }
     string getDrzava()const
     {
         switch(zemljaPorekla)
@@ -128,7 +164,10 @@ public:
             break;
         }
     }
-    DinString getID()const{return ID;}
+    DinString getID()const
+    {
+        return ID;
+    }
 
     string getLager()const
     {

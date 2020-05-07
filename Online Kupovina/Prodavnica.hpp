@@ -15,9 +15,6 @@
 class Prodavnica
 {
 private:
-    deo d;
-    POL pol;
-    vrsta vrs;
     SvaOdeca S;
     SvaObuca O;
     SavAksesoar A;
@@ -30,95 +27,99 @@ private:
     CallCentar call;
 
 public:
+    void setSvaOdeca(SvaOdeca odecos)
+    {
+        S = odecos;
+    }
+    void setSvaObuca(SvaObuca obucos)
+    {
+        O = obucos;
+    }
+    void setSavAksesoar(SavAksesoar aksesoaros)
+    {
+        A = aksesoaros;
+    }
+    void setKorpa(Korpa korpica)
+    {
+        K = korpica;
+    }
+    void setKupac(Kupac kupacos)
+    {
+        kupac = kupacos;
+    }
+    void setIsporuka(Isporuka isporucacos)
+    {
+        i = isporucacos;
+    }
+    void setInfo(informacijeOProdavnici informacione)
+    {
+        info = informacione;
+    }
+    void setSvaMesta(SvaMestaProdavnica svacos)
+    {
+        sva = svacos;
+    }
+    void setPoslodavac(Poslodavac mucaco)
+    {
+        p = mucaco;
+    }
+    void setCall(CallCentar buenosdias)
+    {
+        call = buenosdias;
+    }
 
-    void setDeo(deo dd){d = dd;}
-    void setPol(POL pp){pol = pp;}
-    void setVrsta(vrsta v){vrs = v;}
-    void setSvaOdeca(SvaOdeca odecos){S = odecos;}
-    void setSvaObuca(SvaObuca obucos){O = obucos;}
-    void setSavAksesoar(SavAksesoar aksesoaros){A = aksesoaros;}
-    void setKorpa(Korpa korpica){K = korpica;}
-    void setKupac(Kupac kupacos){kupac = kupacos;}
-    void setIsporuka(Isporuka isporucacos){i = isporucacos;}
-    void setInfo(informacijeOProdavnici informacione){info = informacione;}
-    void setSvaMesta(SvaMestaProdavnica svacos){sva = svacos;}
-    void setPoslodavac(Poslodavac mucaco){p = mucaco;}
-    void setCall(CallCentar buenosdias){call = buenosdias;}
-
-    string getDeo()const
+    SvaOdeca getSvaOdeca()const
     {
-        switch(d)
-        {
-        case ODECA:
-            return "ODECA";
-            break;
-        case OBUCA:
-            return "OBUCA";
-            break;
-        case AKSESOAR:
-            return "AKSESOAR";
-            break;
-        default:
-            return "Nema te oblasti";
-            break;
-        }
+        return S;
     }
-    string getPol()const
+    SvaObuca getSvaObuca()const
     {
-        switch(pol)
-        {
-        case MUSKI:
-            return "MUSKI";
-            break;
-        case ZENSKI:
-            return "ZENSKI";
-            break;
-        case DECIJI:
-            return "DECIJI";
-            break;
-        default:
-            return "Nema pola";
-            break;
-        }
+        return O;
     }
-    string getVrsta()const
+    SavAksesoar getSavAksesoar()const
     {
-        switch(vrs)
-        {
-        case GORNJI:
-            return "GORNJI";
-            break;
-        case DONJI:
-            return "DONJI";
-            break;
-        case NEMA:
-            return "NEMA";
-            break;
-        default:
-            return "Nista";
-            break;
-        }
+        return A;
     }
-    SvaOdeca getSvaOdeca()const{return S;}
-    SvaObuca getSvaObuca()const{return O;}
-    SavAksesoar getSavAksesoar()const{return A;}
-    Korpa getKorpa()const{return K;}
-    Kupac getKupac()const{return kupac;}
-    Isporuka getIsporuka()const{return i;}
-    informacijeOProdavnici getInfo()const{return info;}
-    SvaMestaProdavnica getSvaMesta()const{return sva;}
-    Poslodavac getPoslodavac()const{return p;}
-    CallCentar getCall()const{return call;}
+    Korpa getKorpa()const
+    {
+        return K;
+    }
+    Kupac getKupac()const
+    {
+        return kupac;
+    }
+    Isporuka getIsporuka()const
+    {
+        return i;
+    }
+    informacijeOProdavnici getInfo()const
+    {
+        return info;
+    }
+    SvaMestaProdavnica getSvaMesta()const
+    {
+        return sva;
+    }
+    Poslodavac getPoslodavac()const
+    {
+        return p;
+    }
+    CallCentar getCall()const
+    {
+        return call;
+    }
 
     void dodajUProdavnicuGornji(GornjiDelovi &g)
     {
         if(g.getOdeljenje()== "MUSKO" )
         {
             S.dodajGornjUMuski(g);
-        }else if(g.getOdeljenje() == "ZENSKO")
+        }
+        else if(g.getOdeljenje() == "ZENSKO")
         {
             S.dodajGornjiUZenski(g);
-        }else if(g.getOdeljenje() == "DECIJE")
+        }
+        else if(g.getOdeljenje() == "DECIJE")
         {
             S.dodajGornjiUDeciji(g);
         }
@@ -128,10 +129,12 @@ public:
         if(d.getOdeljenje()== "MUSKO" )
         {
             S.dodajDonjiUMuski(d);
-        }else if(d.getOdeljenje() == "ZENSKO")
+        }
+        else if(d.getOdeljenje() == "ZENSKO")
         {
             S.dodajDonjiUZenski(d);
-        }else if(d.getOdeljenje() == "DECIJE")
+        }
+        else if(d.getOdeljenje() == "DECIJE")
         {
             S.dodajDonjiUDeciji(d);
         }
@@ -141,10 +144,12 @@ public:
         if(o.getOdeljenje()== "MUSKO" )
         {
             O.dodajUMuski(o);
-        }else if(o.getOdeljenje() == "ZENSKO")
+        }
+        else if(o.getOdeljenje() == "ZENSKO")
         {
             O.dodajUZenski(o);
-        }else if(o.getOdeljenje() == "DECIJE")
+        }
+        else if(o.getOdeljenje() == "DECIJE")
         {
             O.dodajUDeciji(o);
         }
@@ -154,10 +159,12 @@ public:
         if(a.getOdeljenje()== "MUSKO" )
         {
             A.dodajUMuski(a);
-        }else if(a.getOdeljenje() == "ZENSKO")
+        }
+        else if(a.getOdeljenje() == "ZENSKO")
         {
             A.dodajUZenski(a);
-        }else if(a.getOdeljenje() == "DECIJE")
+        }
+        else if(a.getOdeljenje() == "DECIJE")
         {
             A.dodajUDeciji(a);
         }
@@ -191,7 +198,10 @@ public:
         return K.getUkupanRacun();
     }
 
-    void ispisCeleKorpe(){K.ispisKorpe();}
+    void ispisCeleKorpe()
+    {
+        K.ispisKorpe();
+    }
 
     void KupovinaProizvodaIzKorpe(Kupac &kup, Isporuka &isp)
     {
@@ -200,7 +210,10 @@ public:
         cout<<"Ukupna cena paketa (SA POSTARINOM): "<<getUkupnaCena()+i.getCena()<<endl;
 
     }
-    void ispisInformacijaOProdavnici(){info.ispisInformacija(getSvaMesta(),getPoslodavac(),getCall());}
+    void ispisInformacijaOProdavnici()
+    {
+        info.ispisInformacija(getSvaMesta(),getPoslodavac(),getCall());
+    }
 };
 
 #endif // PRODAVNICA_HPP_INCLUDED

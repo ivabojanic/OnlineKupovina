@@ -29,7 +29,8 @@ using namespace std;
 int meni()
 {
     int izaberiOperaciju;
-    do{
+    do
+    {
         cout<<"\nIzaberite zeljenu operaciju:\n";
         cout<<" 1. Ispitivanje rada svih konstruktora(prazan,sa parametrima,kopije)"<<endl;
         cout<<" 2. Proba ispisa proizvoda prodavnice"<<endl;
@@ -43,7 +44,8 @@ int meni()
         cin>>izaberiOperaciju;
         if(izaberiOperaciju < 1 || izaberiOperaciju > 8)
             cout<<"\nOpcija van opsega (1-6)! Izaberite zeljenu operaciju ponovo!\n";
-    }while(izaberiOperaciju < 1 || izaberiOperaciju > 8);
+    }
+    while(izaberiOperaciju < 1 || izaberiOperaciju > 8);
     return izaberiOperaciju;
 }
 
@@ -76,7 +78,7 @@ int main()
 
     ///konstruktori klase Mesto
     Mesto M;
-    Mesto M1("Okrugiceva", 16, "Novi Sad");
+    Mesto M1("Preradoviceva", 70, "Petrovaradin");
     Mesto M2(M);
 
     ///konstruktori klase Kartica
@@ -133,7 +135,8 @@ int main()
     cout<<"-----------------------------------------------------------------------------------------------------------------------"<<endl;
     cout<<"\t\t\t\t\t  DOBRODOSLI U IVINU PRODAVNICU"<<endl;
     cout<<"-----------------------------------------------------------------------------------------------------------------------"<<endl;
-    do{
+    do
+    {
         operacija = meni();
         switch(operacija)
         {
@@ -232,7 +235,8 @@ int main()
         case 8:
             exit(0);
         }
-    }while(operacija<8);
+    }
+    while(operacija<8);
 
     return 0;
 }
