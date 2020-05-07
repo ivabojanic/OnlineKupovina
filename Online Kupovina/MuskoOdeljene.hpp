@@ -33,11 +33,6 @@ public:
         }
             return *this;
     }
-    MuskoOdeljenje& operator-=(int mesto)
-    {
-        gornji.izbrisiElement(mesto);
-        return *this;
-    }
     MuskoOdeljenje& operator+=(DonjiDelovi& donjiDelovi)
     {
         if(donjiDelovi.getOdeljenje()=="MUSKO")
