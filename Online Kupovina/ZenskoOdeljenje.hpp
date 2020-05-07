@@ -61,13 +61,13 @@ public:
     {
         if(gornji.velicina() == 0)
         {
-            cout<<"Nema zenskih gornjih delova"<<endl;
+            cout<<"------>Nema zenskih gornjih delova"<<endl;
         }
         else
         {
             GornjiDelovi d;
             cout<<"Zenski gornji delovi :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= gornji.velicina(); i++)
             {
                 gornji.izlistaj(i, d);
@@ -79,13 +79,13 @@ public:
     {
         if(donji.velicina() == 0)
         {
-            cout<<"Nema zenskih donjih delova"<<endl;
+            cout<<"------>Nema zenskih donjih delova"<<endl;
         }
         else
         {
             DonjiDelovi d;
             cout<<"Zenski donji delovi :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= donji.velicina(); i++)
             {
                 donji.izlistaj(i, d);
@@ -97,13 +97,13 @@ public:
     {
         if(ob.velicina() == 0)
         {
-            cout<<"Nema zenskih obuca"<<endl;
+            cout<<"------>Nema zenskih obuca"<<endl;
         }
         else
         {
             Obucica c;
             cout<<"Zenska obuca :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= ob.velicina(); i++)
             {
                 ob.izlistaj(i, c);
@@ -115,13 +115,13 @@ public:
     {
         if(akss.velicina() == 0)
         {
-            cout<<"Nema zenskih aksesoara"<<endl;
+            cout<<"------>Nema zenskih aksesoara"<<endl;
         }
         else
         {
             Aksesoaric a;
             cout<<"Zenski aksesoari :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= akss.velicina(); i++)
             {
                 akss.izlistaj(i, a);

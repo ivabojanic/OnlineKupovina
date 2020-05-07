@@ -8,7 +8,10 @@ private:
     DinString grad;
 public:
     void setGrad(DinString g){grad = g;}
-    DinString getGrad(){return grad;}
+    void setUlica(Ulica ulic){U = ulic;}
+
+    Ulica getUlica()const{return U;}
+    DinString getGrad()const{return grad;}
 
     Mesto(): U(){grad = "Novi Sad";}
     Mesto(DinString i,int b,DinString g):U(i,b){grad = g;}

@@ -33,6 +33,11 @@ public:
         }
             return *this;
     }
+    MuskoOdeljenje& operator-=(int mesto)
+    {
+        gornji.izbrisiElement(mesto);
+        return *this;
+    }
     MuskoOdeljenje& operator+=(DonjiDelovi& donjiDelovi)
     {
         if(donjiDelovi.getOdeljenje()=="MUSKO")
@@ -62,7 +67,7 @@ public:
     {
         if(gornji.velicina() == 0)
         {
-            cout<<"Nema muskih gornjih delova"<<endl;
+            cout<<"------>Nema muskih gornjih delova"<<endl;
         }
         else
         {
@@ -80,13 +85,13 @@ public:
     {
         if(donji.velicina() == 0)
         {
-            cout<<"Nema muskih donjih delova"<<endl;
+            cout<<"------>Nema muskih donjih delova"<<endl;
         }
         else
         {
             DonjiDelovi d;
             cout<<"Muski donji delovi :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= donji.velicina(); i++)
             {
                 donji.izlistaj(i, d);
@@ -98,13 +103,13 @@ public:
     {
         if(ob.velicina() == 0)
         {
-            cout<<"Nema muskih obuca"<<endl;
+            cout<<"------>Nema muskih obuca"<<endl;
         }
         else
         {
             Obucica c;
             cout<<"Muska obuca :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= ob.velicina(); i++)
             {
                 ob.izlistaj(i, c);
@@ -116,13 +121,13 @@ public:
     {
         if(akss.velicina() == 0)
         {
-            cout<<"Nema muskih aksesoara"<<endl;
+            cout<<"------>Nema muskih aksesoara"<<endl;
         }
         else
         {
             Aksesoaric a;
             cout<<"Muski aksesoari :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= akss.velicina(); i++)
             {
                 akss.izlistaj(i, a);

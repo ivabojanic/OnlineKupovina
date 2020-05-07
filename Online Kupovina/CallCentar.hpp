@@ -16,9 +16,11 @@ public:
 
     void ispisCallCentra()
     {
-        cout<<"CALLCENTAR"<<endl;
+        cout<<"--> CALLCENTAR"<<endl;
         cout<<getBrojTelefona()<<endl;
+        cout<<"Predstavnistvo: ";
         m.ispisMesta();
+        cout<<endl;
     }
 };
 

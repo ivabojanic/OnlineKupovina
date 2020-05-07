@@ -162,7 +162,7 @@ public:
     }
     friend ostream& operator<<(ostream& izlaz,  DonjiDelovi &d)
     {
-        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         izlaz<<"Naziv proizvoda: ";
         izlaz<<d.getVrsta()<<endl;
         izlaz<<"Velicina: ";

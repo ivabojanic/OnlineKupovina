@@ -257,7 +257,7 @@ public:
 
     friend ostream& operator<<(ostream& izlaz,  GornjiDelovi &g)
     {
-        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         izlaz<<"Naziv proizvoda: ";
         izlaz<<g.getNaziv()<<","<<g.getTip()<<endl;
         izlaz<<"Velicina: ";

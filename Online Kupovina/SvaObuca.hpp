@@ -27,11 +27,11 @@ public:
 
     void ispisiSvuObucu()
     {
-       cout<<"MUSKA OBUCA:"<<endl;
+       cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| MUSKA OBUCA |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
        M.ispisObucice();
-       cout<<"ZENSKA OBUCA:"<<endl;
+       cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| ZENSKA ODECA |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
        Z.ispisObucice();
-       cout<<"DECIJA OBUCA:"<<endl;
+       cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| DECIJA ODECA |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
        D.ispisObucice();
     }
 };

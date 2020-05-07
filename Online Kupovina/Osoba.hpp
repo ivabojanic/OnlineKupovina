@@ -20,11 +20,13 @@ public:
     void setPrezime(DinString prez){Prezime = prez;}
     void setEmail(DinString em){email = em;}
     void setBrojTelefona(DinString br){brojTelefona = br;}
+    void setMesto(Mesto mestic){mesto = mestic;}
 
     DinString getIme()const{return Ime;}
     DinString getPrezime()const{return Prezime;}
     DinString getEmail()const{return email;}
     DinString getBrojTelefona()const{return brojTelefona;}
+    Mesto getMesto()const{return mesto;}
 
     void ispis()
     {
@@ -32,6 +34,7 @@ public:
         cout<<getEmail()<<endl;
         cout<<"+381"<<getBrojTelefona()<<endl;
         mesto.ispisMesta();
+        cout<<endl;
     }
 };
 

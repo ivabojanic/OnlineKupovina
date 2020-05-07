@@ -14,6 +14,7 @@ public:
     void ispisInformacija(SvaMestaProdavnica s,Poslodavac p, CallCentar call)
     {
         s.ispisSvihMesta();
+        cout<<"--> POSLODAVAC:"<<endl;
         p.ispis();
         call.ispisCallCentra();
     }

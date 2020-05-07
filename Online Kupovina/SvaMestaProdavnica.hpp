@@ -8,7 +8,7 @@ class SvaMestaProdavnica
 private:
     Lista<Mesto> svaMesta;
 public:
-
+    void setListuMesta(Lista<Mesto> &mes){svaMesta = mes;}
     Lista<Mesto> getMesta(){return svaMesta;}
 
     SvaMestaProdavnica& operator+=(Mesto& mesto)
@@ -21,12 +21,12 @@ public:
     {
         if(svaMesta.velicina() == 0)
         {
-            cout<<"Nema prodajnih mesta"<<endl;
+            cout<<"--> Nema prodajnih mesta"<<endl;
         }
         else
         {
             Mesto mm;
-            cout<<"Prodajna mesta: "<<endl;
+            cout<<"--> PRODAJNA MESTA: "<<endl;
             for(int i = 1; i <= svaMesta.velicina(); i++)
             {
                 svaMesta.izlistaj(i,mm);

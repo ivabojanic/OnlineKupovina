@@ -224,7 +224,7 @@ public:
     }
     friend ostream& operator<<(ostream& izlaz,  Obucica &o)
     {
-        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         izlaz<<"Naziv proizvoda: ";
         izlaz<<o.getNaziv()<<endl;
         izlaz<<"Velicina: ";

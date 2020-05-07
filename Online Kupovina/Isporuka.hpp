@@ -23,6 +23,7 @@ public:
     {
         cout<<"Vas paket ce biti dostavljen: "<<getDatum()<<endl;
         cout<<"Dostavna sluzba: "<<getDostava()<<endl;
+        cout<<endl;
     }
 };
 

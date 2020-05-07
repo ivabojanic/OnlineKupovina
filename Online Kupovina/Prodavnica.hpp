@@ -34,6 +34,16 @@ public:
     void setDeo(deo dd){d = dd;}
     void setPol(POL pp){pol = pp;}
     void setVrsta(vrsta v){vrs = v;}
+    void setSvaOdeca(SvaOdeca odecos){S = odecos;}
+    void setSvaObuca(SvaObuca obucos){O = obucos;}
+    void setSavAksesoar(SavAksesoar aksesoaros){A = aksesoaros;}
+    void setKorpa(Korpa korpica){K = korpica;}
+    void setKupac(Kupac kupacos){kupac = kupacos;}
+    void setIsporuka(Isporuka isporucacos){i = isporucacos;}
+    void setInfo(informacijeOProdavnici informacione){info = informacione;}
+    void setSvaMesta(SvaMestaProdavnica svacos){sva = svacos;}
+    void setPoslodavac(Poslodavac mucaco){p = mucaco;}
+    void setCall(CallCentar buenosdias){call = buenosdias;}
 
     string getDeo()const
     {
@@ -89,10 +99,13 @@ public:
             break;
         }
     }
-    Prodavnica(){d = ODECA; pol = MUSKI; vrs = GORNJI;}
-    Prodavnica(deo dd,POL p,vrsta v){d = dd; pol = p; vrs = v;}
-    Prodavnica(const Prodavnica &pro){d = pro.d; pol = pro.pol; vrs = pro.vrs;}
-
+    SvaOdeca getSvaOdeca()const{return S;}
+    SvaObuca getSvaObuca()const{return O;}
+    SavAksesoar getSavAksesoar()const{return A;}
+    Korpa getKorpa()const{return K;}
+    Kupac getKupac()const{return kupac;}
+    Isporuka getIsporuka()const{return i;}
+    informacijeOProdavnici getInfo()const{return info;}
     SvaMestaProdavnica getSvaMesta()const{return sva;}
     Poslodavac getPoslodavac()const{return p;}
     CallCentar getCall()const{return call;}
@@ -184,7 +197,8 @@ public:
     {
         kup.KupiProzivod(getUkupnaCena());
         isp.ispisIsporuke();
-        cout<<"Ukupna cena paketa: "<<getUkupnaCena()+i.getCena()<<endl;
+        cout<<"Ukupna cena paketa (SA POSTARINOM): "<<getUkupnaCena()+i.getCena()<<endl;
+
     }
     void ispisInformacijaOProdavnici(){info.ispisInformacija(getSvaMesta(),getPoslodavac(),getCall());}
 };

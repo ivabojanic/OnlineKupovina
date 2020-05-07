@@ -26,7 +26,6 @@ public:
         izlaz<<"Informacije o poslodavcu: "<<endl;
         p.ispisRadnje();
         p.ispis();
-        izlaz<<endl;
         return izlaz;
     }
 

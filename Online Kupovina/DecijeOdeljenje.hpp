@@ -14,7 +14,7 @@ private:
     Lista<Obucica> ob;
     Lista<Aksesoaric> akss;
 public:
-    void setGornji(Lista<GornjiDelovi> g){gornji = g;}
+     void setGornji(Lista<GornjiDelovi> g){gornji = g;}
      void setDonji(Lista<DonjiDelovi> d){donji = d;}
      void setObuca(Lista<Obucica> o){ob = o;}
      void setAksesoar(Lista<Aksesoaric> a){akss = a;}
@@ -61,13 +61,13 @@ public:
     {
         if(gornji.velicina() == 0)
         {
-            cout<<"Nema decijih gornjih delova"<<endl;
+            cout<<"------>Nema decijih gornjih delova"<<endl;
         }
         else
         {
             GornjiDelovi d;
             cout<<"Deciji gornji delovi :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= gornji.velicina(); i++)
             {
                 gornji.izlistaj(i, d);
@@ -79,13 +79,13 @@ public:
     {
         if(donji.velicina() == 0)
         {
-            cout<<"Nema decijih donjih delova"<<endl;
+            cout<<"------>Nema decijih donjih delova"<<endl;
         }
         else
         {
             DonjiDelovi d;
             cout<<"Deciji donji delovi :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= donji.velicina(); i++)
             {
                 donji.izlistaj(i, d);
@@ -97,13 +97,13 @@ public:
     {
         if(ob.velicina() == 0)
         {
-            cout<<"Nema decije obuce"<<endl;
+            cout<<"------>Nema decije obuce"<<endl;
         }
         else
         {
             Obucica c;
             cout<<"Decija obuca :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= ob.velicina(); i++)
             {
                 ob.izlistaj(i, c);
@@ -115,13 +115,13 @@ public:
     {
         if(akss.velicina() == 0)
         {
-            cout<<"Nema decijeg aksesoara"<<endl;
+            cout<<"------>Nema decijeg aksesoara"<<endl;
         }
         else
         {
             Aksesoaric a;
             cout<<"Deciji aksesoari :"<<endl;
-
+            cout<<endl;
             for (int i = 1; i <= akss.velicina(); i++)
             {
                 akss.izlistaj(i, a);

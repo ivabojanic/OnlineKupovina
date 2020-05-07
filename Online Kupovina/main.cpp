@@ -32,12 +32,12 @@ int meni()
     do{
         cout<<"\nIzaberite zeljenu operaciju:\n";
         cout<<" 1. Ispitivanje rada svih konstruktora(prazan,sa parametrima,kopije)"<<endl;
-        cout<<" 2. Ispis proizvoda prodavnice"<<endl;
+        cout<<" 2. Proba ispisa proizvoda prodavnice"<<endl;
         cout<<" 3. Proba ispisa liste mesta prodavnica"<<endl;
         cout<<" 4. Proba ispisa korpe"<<endl;
         cout<<" 5. Proba ispisa konacnog racuna"<<endl;
-        cout<<" 6. Kupovina proizvoda iz korpe"<<endl;
-        cout<<" 7. Ispis informacija o prodavnici"<<endl;
+        cout<<" 6. Proba porudzbine"<<endl;
+        cout<<" 7. Proba ispisa informacija o prodavnici"<<endl;
         cout<<" 8. KRAJ RADA PROGRAMA";
         cout<<"\n>>>";
         cin>>izaberiOperaciju;
@@ -81,7 +81,7 @@ int main()
 
     ///konstruktori klase Kartica
     Kartica K;
-    Kartica K1("123456789", "1234", 1000000.00);
+    Kartica K1("123456789", "1234", 10000.00);
     Kartica K2(K);
 
     ///konstruktori klase Osoba
@@ -91,7 +91,7 @@ int main()
 
     ///konstruktori klase Kupac
     Kupac Ku;
-    Kupac Ku1("123456789","1234", 1000000.00);
+    Kupac Ku1("123456789","1234", 10000.00);
     Kupac Ku2(Ku);
 
     ///konstruktori klase Poslodavac
@@ -130,82 +130,82 @@ int main()
     informacijeOProdavnici Info;
 
     int operacija;
-    cout<<"-----------------------------------------"<<endl;
-    cout<<"\tDOBRODOSLI U IVINU PRODAVNICU"<<endl;
-    cout<<"-----------------------------------------"<<endl;
+    cout<<"-----------------------------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"\t\t\t\t\t  DOBRODOSLI U IVINU PRODAVNICU"<<endl;
+    cout<<"-----------------------------------------------------------------------------------------------------------------------"<<endl;
     do{
         operacija = meni();
         switch(operacija)
         {
         case 1:
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA GORNJE DELOVE"<<endl;
+            cout<<"--> KONTSTUKTORI ZA GORNJE DELOVE <--"<<endl;
             cout<<endl;
             cout<<G;
             cout<<G1;
             cout<<G2;
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA DONJE DELOVE"<<endl;
+            cout<<"--> KONTSTUKTORI ZA DONJE DELOVE <--"<<endl;
             cout<<endl;
             cout<<D;
             cout<<D1;
             cout<<D2;
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA OBUCU"<<endl;
+            cout<<"--> KONTSTUKTORI ZA OBUCU <--"<<endl;
             cout<<endl;
             cout<<O;
             cout<<O1;
             cout<<O2;
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA AKSESOAR"<<endl;
+            cout<<"--> KONTSTUKTORI ZA AKSESOAR <--"<<endl;
             cout<<endl;
             cout<<A;
             cout<<A1;
             cout<<A2;
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA ULICU"<<endl;
+            cout<<"--> KONTSTUKTORI ZA ULICU <--"<<endl;
             cout<<endl;
             U.ispisUlice();
             U1.ispisUlice();
             U2.ispisUlice();
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA MESTO"<<endl;
+            cout<<"--> KONTSTUKTORI ZA MESTO <--"<<endl;
             cout<<endl;
             M.ispisMesta();
             M1.ispisMesta();
             M2.ispisMesta();
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA KARTICU"<<endl;
+            cout<<"--> KONTSTUKTORI ZA KARTICU <--"<<endl;
             cout<<endl;
             K.ispisKartice();
             K1.ispisKartice();
             K2.ispisKartice();
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA OSOBU"<<endl;
+            cout<<"--> KONTSTUKTORI ZA OSOBU <--"<<endl;
             cout<<endl;
             Ob.ispis();
             Ob1.ispis();
             Ob2.ispis();
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA KUPCA"<<endl;
+            cout<<"--> KONTSTUKTORI ZA KUPCA <--"<<endl;
             cout<<endl;
             Ku.ispisKupca();
             Ku1.ispisKupca();
             Ku2.ispisKupca();
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA POSLODAVCA"<<endl;
+            cout<<"--> KONTSTUKTORI ZA POSLODAVCA <--"<<endl;
             cout<<endl;
             cout<<P;
             cout<<P1;
             cout<<P2;
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA ISPORUKU"<<endl;
+            cout<<"--> KONTSTUKTORI ZA ISPORUKU <--"<<endl;
             cout<<endl;
             I.ispisIsporuke();
             I1.ispisIsporuke();
             I2.ispisIsporuke();
             cout<<endl;
-            cout<<"KONTSTUKTORI ZA CALLCENTAR"<<endl;
+            cout<<"--> KONTSTUKTORI ZA CALLCENTAR <--"<<endl;
             cout<<endl;
             C.ispisCallCentra();
             C1.ispisCallCentra();

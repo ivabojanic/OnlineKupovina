@@ -27,11 +27,11 @@ public:
 
     void ispisiSavAksesoar()
     {
-        cout<<"MUSKI AKSESOAR:"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| MUSKI AKSESOAR |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         M.ispisAksesoarica();
-        cout<<"ZENSKI AKSESOAR:"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| ZENSKI AKSESOAR |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         Z.ispisAksesoarica();
-        cout<<"DECIJI AKSESOAR:"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| DECIJI AKSESOAR |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         D.ispisAksesoarica();
     }
 };

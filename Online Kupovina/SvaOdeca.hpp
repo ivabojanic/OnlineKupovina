@@ -42,13 +42,13 @@ public:
 
     void ispisiSvuOdecu()
     {
-        cout<<"MUSKA ODECA"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| MUSKA ODECA |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         M.ispisGornjih();
         M.ispisDonjih();
-        cout<<"ZENSKA ODECA"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| ZENSKA ODECA |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         Z.ispisGornjih();
         Z.ispisDonjih();
-        cout<<"DECIJA ODECA"<<endl;
+        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| DECIJA ODECA |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         D.ispisGornjih();
         D.ispisDonjih();
     }
