@@ -259,6 +259,25 @@ public:
         ID = l.ID;
         naLageru = l.naLageru;
     }
+    Aksesoaric& operator=(const Aksesoaric &akses)
+    {
+        odeljenje = akses.odeljenje;
+        period = akses.period;
+        naziv = akses.naziv;
+        sirina = akses.sirina;
+        duzina = akses.duzina;
+        visina = akses.visina;
+        opis = akses.opis;
+        cena = akses.cena;
+        boja = akses.boja;
+        model = akses.model;
+        materijal = akses.materijal;
+        proizvodjac = akses.proizvodjac;
+        zemljaPorekla = akses.zemljaPorekla;
+        ID = akses.ID;
+        naLageru = akses.naLageru;
+        return *this;
+    }
     friend ostream& operator<<(ostream& izlaz,  Aksesoaric &a)
     {
         izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;

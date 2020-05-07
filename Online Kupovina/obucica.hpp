@@ -245,6 +245,24 @@ public:
         ID = o.ID;
         naLageru = o.naLageru;
     }
+    Obucica& operator=(const Obucica &obuc)
+    {
+        odeljenje = obuc.odeljenje;
+        naziv = obuc.naziv;
+        velicina = obuc.velicina;
+        kopca = obuc.kopca;
+        debljinaDjona = obuc.debljinaDjona;
+        opis = obuc.opis;
+        cena = obuc.cena;
+        boja = obuc.boja;
+        model = obuc.model;
+        materijal = obuc.materijal;
+        proizvodjac = obuc.proizvodjac;
+        zemljaPorekla = obuc.zemljaPorekla;
+        ID = obuc.ID;
+        naLageru = obuc.naLageru;
+        return *this;
+    }
     friend ostream& operator<<(ostream& izlaz,  Obucica &o)
     {
         izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;

@@ -270,6 +270,24 @@ public:
         naLageru = g.naLageru;
     }
 
+    GornjiDelovi& operator=(const GornjiDelovi &gornji)
+    {
+        odeljenje = gornji.odeljenje;
+        naziv = gornji.naziv;
+        tip = gornji.tip;
+        velicina = gornji.velicina;
+        sezona = gornji.sezona;
+        opis = gornji.opis;
+        cena = gornji.cena;
+        boja = gornji.boja;
+        model = gornji.model;
+        materijal = gornji.materijal;
+        proizvodjac = gornji.proizvodjac;
+        zemljaPorekla = gornji.zemljaPorekla;
+        ID = gornji.ID;
+        naLageru = gornji.naLageru;
+        return *this;
+    }
     friend ostream& operator<<(ostream& izlaz,  GornjiDelovi &g)
     {
         izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;

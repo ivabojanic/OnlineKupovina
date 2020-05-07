@@ -39,13 +39,14 @@ int meni()
         cout<<" 5. Proba ispisa konacnog racuna"<<endl;
         cout<<" 6. Proba porudzbine"<<endl;
         cout<<" 7. Proba ispisa informacija o prodavnici"<<endl;
-        cout<<" 8. KRAJ RADA PROGRAMA";
+        cout<<" 8. Proba operatora dodele"<<endl;
+        cout<<" 9. KRAJ RADA PROGRAMA";
         cout<<"\n>>>";
         cin>>izaberiOperaciju;
-        if(izaberiOperaciju < 1 || izaberiOperaciju > 8)
+        if(izaberiOperaciju < 1 || izaberiOperaciju > 9)
             cout<<"\nOpcija van opsega (1-6)! Izaberite zeljenu operaciju ponovo!\n";
     }
-    while(izaberiOperaciju < 1 || izaberiOperaciju > 8);
+    while(izaberiOperaciju < 1 || izaberiOperaciju > 9);
     return izaberiOperaciju;
 }
 
@@ -53,17 +54,17 @@ int main()
 {
     ///konstruktori klase GornjiDelovi
     GornjiDelovi G;
-    GornjiDelovi G1(ZENSKI, HALJINA, KRATKI, M, PROLECE, "Kratka haljina sa V-izrezom,cvetnim motivom,uskim naramenicama i dugmicima na prednjoj strani.", 1200.00, CRVENA, NOVI, SVILA, "FBsister", INDONEZIJA, "0811471005", true);
+    GornjiDelovi G1(ZENSKI, HALJINA, KRATKI, M, LETO, "Kratka haljina sa V-izrezom,cvetnim motivom,uskim naramenicama i dugmicima na prednjoj strani.", 790.00, ZELENA, NOVI, SVILA, "FBsister", FRANCUSKA, "0811478889", true);
     GornjiDelovi G2(G);
 
     ///konstruktori klase DonjiDelovi
     DonjiDelovi D;
-    DonjiDelovi D1(ZENSKI, FARMERICE, 28, "Farmerice sa pet dzepova,ekstra visokim strukom i nežno zategnutim nogavicama sa sivim rubom.", 3200.00, PLAVA, NOVI, TEKSAS, "LCWaikiki", BANGLADES, "0572998001", false);
+    DonjiDelovi D1(ZENSKI, SORC, 20, "Sorc sa pet dzepova i ekstra visokim strukom ", 2990.00, PLAVA, LASTSEASON, TEKSAS, "LCWaikiki", KINA, "0500908001", true);
     DonjiDelovi D2(D);
 
     ///konstruktori klase Obucica
     Obucica O;
-    Obucica O1( ZENSKI, STIKLE, 39, BEZ, 0.2, "Satirane sa stiklom od 5cm", 2800.00, CRVENA, LASTSEASON, PLATNO, "OhLaLa", TURSKA, "0662923085", true);
+    Obucica O1( ZENSKI, PATIKE, 40, PERTLE, 2.0, "Starke old school", 4500.00, ZUTA, NOVI, PLATNO, "AllStar", SAD , "06629234331", true);
     Obucica O2(O);
 
     ///konstruktori klase Aksesoari
@@ -233,10 +234,18 @@ int main()
             Info.ispisInformacija(mestasce,P1,C1);
             break;
         case 8:
+            cout<<G;
+            G=G1;
+            cout<<G;
+            cout<<"-----------------------------------------------------------------------------------------------------------------------"<<endl;
+            cout<<O;
+            O=O1;
+            cout<<O;
+        case 9:
             exit(0);
         }
     }
-    while(operacija<8);
+    while(operacija<9);
 
     return 0;
 }

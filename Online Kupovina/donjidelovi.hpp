@@ -167,6 +167,22 @@ public:
         ID = d.ID;
         naLageru = d.naLageru;
     }
+    DonjiDelovi& operator=(const DonjiDelovi &donji)
+    {
+        odeljenje = donji.odeljenje;
+        naziv = donji.naziv;
+        velicina = donji.velicina;
+        opis = donji.opis;
+        cena = donji.cena;
+        boja = donji.boja;
+        model = donji.model;
+        materijal = donji.materijal;
+        proizvodjac = donji.proizvodjac;
+        zemljaPorekla = donji.zemljaPorekla;
+        ID = donji.ID;
+        naLageru = donji.naLageru;
+        return *this;
+    }
     friend ostream& operator<<(ostream& izlaz,  DonjiDelovi &d)
     {
         izlaz<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| PROIZVOD |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
